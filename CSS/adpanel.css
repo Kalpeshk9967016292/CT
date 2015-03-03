@@ -22,8 +22,8 @@ font-family: 'Bitter', serif;
 
 .opsel{
 height: 200;
-border-style: groove;
-margin-top: 60;
+/* border-style: groove; */
+margin-top: 100;
 }
 
 .newe{
@@ -32,4 +32,29 @@ height: 200;
 background-size: 190;
 background-repeat: no-repeat;
 margin-left: 25%;
+width: 200px;
+transition: transform 0.5s;
+float: left;
+text-indent:-9999px;
 }
+
+.newe:hover{
+transform: rotate(360deg);
+}
+
+.news{
+background-image: url(../IMG/as.png);
+height: 200;
+background-size: 190;
+background-repeat: no-repeat;
+margin-left: 25%;
+width: 200px;
+transition: transform 0.5s;
+float: left;
+text-indent: -9999;
+}
+
+.news:hover{
+transform: rotate(360deg);
+}
+
