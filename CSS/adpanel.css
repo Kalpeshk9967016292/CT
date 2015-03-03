@@ -19,3 +19,17 @@ font-size: 30px;
 text-align: -webkit-center;
 font-family: 'Bitter', serif;
 }
+
+.opsel{
+height: 200;
+border-style: groove;
+margin-top: 60;
+}
+
+.newe{
+background-image: url(../IMG/newexam.png);
+height: 200;
+background-size: 190;
+background-repeat: no-repeat;
+margin-left: 25%;
+}
