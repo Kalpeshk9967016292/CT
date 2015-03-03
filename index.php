@@ -2,6 +2,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+<title>CT Exam</title>
 </head>
 
 <body>
@@ -14,7 +15,8 @@ Login to start your exam.
 
 <div class="login">
 
-<div class="form" form name="login" action="login.php" method="post">
+<form name="login" action="login.php" method="post">
+<div class="form">
 <div class="tbx">
 <input type="text" placeholder="Enter User name" name="username">
 <br>

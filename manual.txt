@@ -1,0 +1,14 @@
+----Student Login----
+ENter U s& Pass
+Instruction
+Start Exam
+Timer starts
+
+------New Exam-------
+schedule a exam
+names of students appering
+set exam topic
+set questions
+for mcq write answer in db
+for theory manual check -- marks based on written asnwer 
+genrate username & pass for students
