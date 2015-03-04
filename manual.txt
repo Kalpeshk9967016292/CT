@@ -12,3 +12,16 @@ set questions
 for mcq write answer in db
 for theory manual check -- marks based on written asnwer 
 genrate username & pass for students
+
+----Registration-----
+ID
+Name
+User Name
+Password
+Fn
+LS
+Course name
+Exam duration
+Marks
+Photo Optional
+
