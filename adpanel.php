@@ -16,9 +16,9 @@ Admin Panel
 </div>
 <div class="opsel">
 
-<a href="http://ran.ge/"  class="newe"> </a>
+<a href="addexam.php"  class="newe"> </a>
 
-<a href="http://ran.ge/" class="news"> </a>
+<a href="addstud.php" class="news"> </a>
 
 </div>
 
