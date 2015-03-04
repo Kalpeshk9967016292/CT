@@ -3,6 +3,10 @@
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <title>CT Exam</title>
+
+
+
+
 </head>
 
 <body>
@@ -12,7 +16,16 @@
 <div class="exam">
 Login to start your exam.
 </div>
+<div class="error">
 
+<?php 
+session_start();
+if(empty($_SESSION['username'])) {
+echo 'incorrect username/ password please try again.' ; 
+?> 
+
+
+</div>
 <div class="login">
 
 <form name="login" action="login.php" method="post">
@@ -28,6 +41,5 @@ Login to start your exam.
 </div>
 </form>
 </div>
-
 </body>
 </html>

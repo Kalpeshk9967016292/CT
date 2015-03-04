@@ -28,10 +28,12 @@ else
 	header("location:adpanel.php");
 	}
 else
-	header("location:adpanel.php");
+	
+	header("location:index.php");
 	
 }
 else
 
 die("Please enter username and a password!");
+
 ?>
