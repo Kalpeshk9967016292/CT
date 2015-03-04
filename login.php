@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 include('connect.php');
 $username = $_POST['username'];
@@ -23,17 +24,14 @@ if ($numrows!=0)
 if ($username==$dbusername&&$password==$dbpassword)
 {
 	$_SESSION['username']=$username;
-	}
-else
 	header("location:adpanel.php");
-	}
-else
-	
-	header("location:index.php");
-	
 }
 else
-
+	echo "Incorrect password!";
+}
+else
+	die ("That user doesn't exist!");
+}
+else
 die("Please enter username and a password!");
-
 ?>

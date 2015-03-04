@@ -33,13 +33,15 @@ background-size: 190;
 background-repeat: no-repeat;
 margin-left: 25%;
 width: 200px;
-transition: transform 0.5s;
+transition: border-radius 0.5s;
 float: left;
 text-indent:-9999px;
+border-radius: 100;
+background-color: rgb(109, 154, 160);
 }
 
 .newe:hover{
-transform: rotate(360deg);
+border-radius: 5;
 }
 
 .news{
@@ -49,13 +51,15 @@ background-size: 190;
 background-repeat: no-repeat;
 margin-left: 25%;
 width: 200px;
-transition: transform 0.5s;
+transition: border-radius 0.5s;
 float: left;
-text-indent: -9999;
+text-indent:-9999px;
+border-radius: 100;
+background-color: rgb(129, 165, 140);
 }
 
 .news:hover{
-transform: rotate(360deg);
+border-radius: 5;
 }
 
 .error{
