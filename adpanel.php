@@ -14,11 +14,22 @@
 <div class="heading">
 Admin Panel
 </div>
+
+<hr size="2" color='black'>
+
 <div class="opsel">
 
 <a href="addexam.php"  class="newe"> </a>
 
 <a href="addstud.php" class="news"> </a>
+<br>
+<div class="addexam">
+Schedule a new exam.
+</div>
+
+<div class="addstud">
+Add new student
+</div>
 
 </div>
 

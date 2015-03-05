@@ -62,7 +62,19 @@ background-color: rgb(129, 165, 140);
 border-radius: 5;
 }
 
-.error{
+.addexam{
+clear: both;
+margin-left: 315px;
+font-size: 30;
+padding-top: 20;
+float: left;
+}
 
+.addstud{
+/* clear: both; */
+font-size: 30;
+padding-top: 22px;
+float: right;
+margin-right: 265px;
 }
 
