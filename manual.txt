@@ -22,6 +22,9 @@ Fn
 LS
 Course name
 Exam duration
+
+
+Edited
 Marks
 Photo Optional
 
