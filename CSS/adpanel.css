@@ -1,80 +1,92 @@
 body{
-margin:0px;
-padding:0px;
+margin: 0px;
 }
 
-.logo{
-background-image: url(../IMG/CTL.png);
-height: 100px;
-background-size: 108;
+#logo{
+background-image: url("../IMG/ctl.png");
+height: 135;
+background-size: 135;
 background-repeat: no-repeat;
-/* margin-left: 41%; */
-width: 100px;
+width: 135;
 float: left;
+margin-left: 20;
+margin-top:10;
 }
 
-.heading{
-padding-top: 15px;
-font-size: 30px;
-text-align: -webkit-center;
-font-family: 'Bitter', serif;
+#head{
+/* text-align: -webkit-center; */
+font-size: -webkit-xxx-large;
+padding-top: 40;
+font-family: 'Slabo 27px', serif;
+padding-left: 530px;
 }
 
-.opsel{
-height: 200;
+#wbar{
+height: 37px;
 /* border-style: groove; */
-margin-top: 100;
+margin-top: 70px;
+background-color: white;
 }
 
-.newe{
-background-image: url(../IMG/newexam.png);
-height: 200;
-background-size: 190;
-background-repeat: no-repeat;
-margin-left: 25%;
-width: 200px;
-transition: border-radius 0.5s;
+#usn{
 float: left;
-text-indent:-9999px;
-border-radius: 100;
-background-color: rgb(109, 154, 160);
+font-size: 20px;
+padding-top: 6;
+margin-left: 20;
+font-family: 'Slabo 27px', serif;
 }
 
-.newe:hover{
-border-radius: 5;
-}
-
-.news{
-background-image: url(../IMG/as.png);
-height: 200;
-background-size: 190;
-background-repeat: no-repeat;
-margin-left: 25%;
-width: 200px;
-transition: border-radius 0.5s;
-float: left;
-text-indent:-9999px;
-border-radius: 100;
-background-color: rgb(129, 165, 140);
-}
-
-.news:hover{
-border-radius: 5;
-}
-
-.addexam{
-clear: both;
-margin-left: 315px;
-font-size: 30;
-padding-top: 20;
-float: left;
-}
-
-.addstud{
-/* clear: both; */
-font-size: 30;
-padding-top: 22px;
+#dt{
 float: right;
-margin-right: 265px;
+font-size: 20px;
+padding-top: 6;
+margin-right: 20;
+font-family: 'Slabo 27px', serif;
 }
 
+#select{
+text-align: -webkit-center; 
+font-size: 40px;
+padding-top: 25;
+/*padding-left: 550px;*/
+}
+
+#selector{
+height: 250;
+margin-top: 50;
+}
+
+.circle{
+height: 200px;
+/* border-style: solid; */
+border-radius: 100;
+width: 200px;
+margin-top: 15;
+margin-left: 105px;
+background-size: 200;
+display: block;
+float: left;
+box-shadow:none;
+transition: box-shadow 0.5s;
+}
+
+#NE{
+background-image: url('../IMG/ne.png');
+
+}
+
+.circle:hover{
+box-shadow: 0 0 40px #3c4966;
+}
+
+#MS{
+background-image: url('../IMG/ms.png');
+}
+
+#rex{
+background-image: url('../IMG/rex.png');
+}
+
+#cp{
+background-image: url('../IMG/cp.png');
+}

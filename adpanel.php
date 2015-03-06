@@ -2,35 +2,39 @@
 <head>
 <link rel="stylesheet" type="text/css" href="CSS/adpanel.css">
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="adpanel.js"></script>
 <title>CT Exam Admin Panel</title>
 </head>
 
-<body>
-<div class="logo">
+<body bgcolor="neelam">
+
+<div id="logo">
 </div>
-<div class="heading">
+
+<div id="head">
 Admin Panel
 </div>
 
-<hr size="2" color='black'>
-
-<div class="opsel">
-
-<a href="addexam.php"  class="newe"> </a>
-
-<a href="addstud.php" class="news"> </a>
-<br>
-<div class="addexam">
-Schedule a new exam.
+<div id="wbar">
+<div id="usn">
+Welcome Kalpesh!
+</div>
+<div id="dt">
+<?php echo "Date : ".date("d/m/Y")?>
+</div>
 </div>
 
-<div class="addstud">
-Add new student
+<!--<div id="select">
+Select a task.
 </div>
+-->
 
+<div id="selector">
+<a href="newexa.php" title="New Exam" class="circle" id="NE"></a>
+<a href="ms.php" title="Manage Students" class="circle" id="MS"></a>
+<a href="reex.php" title="Re-exam" class="circle" id="rex"></a>
+<a href="cp.php" title="Check papers" class="circle" id="CP"></a>
 </div>
 
 </body>
