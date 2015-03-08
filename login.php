@@ -8,7 +8,7 @@ $password = $_POST['pass'];
 
 if ($username&&$password)
 {
-$query = mysql_query ("SELECT * FROM students WHERE username='$username'");
+$query = mysql_query ("SELECT * FROM student_log WHERE susername='$username'");
 
 $numrows = mysql_num_rows($query);
 
@@ -17,8 +17,8 @@ if ($numrows!=0)
 
 	while ($row = mysql_fetch_array($query))
 {
-	$dbusername = $row['Username'];
-	$dbpassword = $row['Password'];
+	$dbusername = $row['susername'];
+	$dbpassword = $row['spassword'];
 }
 
 if ($username==$dbusername&&$password==$dbpassword)

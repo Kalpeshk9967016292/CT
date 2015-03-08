@@ -8,7 +8,11 @@
 </head>
 
 <body bgcolor="neelam">
-
+<?php
+session_start();
+if($_SESSION['username'])
+{
+?>
 <div id="logo">
 </div>
 
@@ -18,10 +22,18 @@ Admin Panel
 
 <div id="wbar">
 <div id="usn">
-Welcome Kalpesh!
+<?php
+$user =$_SESSION['username']; 
+include('connect.php');
+$result=mysql_query("select * from student_info where Username='$user'");
+while($row=mysql_fetch_assoc($result))
+{
+echo $row['fname'];
+}
+?>
 </div>
 <div id="dt">
-<?php echo "Date : ".date("d/m/Y")?>
+<a href="logout.php">Log out</a>
 </div>
 </div>
 
@@ -36,6 +48,12 @@ Select a task.
 <a href="reex.php" title="Re-exam" class="circle" id="rex"></a>
 <a href="cp.php" title="Check papers" class="circle" id="CP"></a>
 </div>
-
+<?php
+}
+else
+{
+header ("location:index.php");
+}
+?>
 </body>
 </html>
