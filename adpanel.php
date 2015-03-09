@@ -28,7 +28,7 @@ include('connect.php');
 $result=mysql_query("select * from student_info where Username='$user'");
 while($row=mysql_fetch_assoc($result))
 {
-echo $row['fname'];
+echo "Welcome ".$row['fname']."!";
 }
 ?>
 </div>

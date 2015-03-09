@@ -22,9 +22,9 @@ Login to start your exam.
 <form name="login" action="login.php" method="post">
 <div class="form">
 <div class="tbx">
-<input type="text" placeholder="Enter User name" name="username">
+<input type="text" placeholder="Enter User name" name="username" required="">
 <br>
-<input type="password" placeholder="Enter Password" name="pass">
+<input type="password" placeholder="Enter Password" name="pass" required="">
 </div>
 
 <input div class="btn" type="submit" value="Login">
