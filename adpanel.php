@@ -9,6 +9,8 @@
 
 <body bgcolor="neelam">
 <?php
+
+error_reporting(0);
 session_start();
 if($_SESSION['username'])
 {
@@ -23,6 +25,7 @@ Admin Panel
 <div id="wbar">
 <div id="usn">
 <?php
+error_reporting(E_NOTICE);
 $user =$_SESSION['username']; 
 include('connect.php');
 $result=mysql_query("select * from student_info where Username='$user'");
@@ -33,7 +36,7 @@ echo "Welcome ".$row['fname']."!";
 ?>
 </div>
 <div id="dt">
-<a href="logout.php">Log out</a>
+<a href="logout.php" style="text-decoration:none;">Log out</a>
 </div>
 </div>
 

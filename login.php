@@ -4,9 +4,15 @@ session_start();
 include('connect.php');
 $username = $_POST['username'];
 $password = $_POST['pass'];
+<<<<<<< HEAD
 $submit = $_POST['sbtn'];
+=======
 
-if ($username&&$password)
+$submit = $_POST['sbtn'];
+$asubmit = $_POST['abtn'];
+>>>>>>> origin/master
+
+if($submit)
 {
 	if($submit)
 	{
@@ -62,5 +68,31 @@ else
 }
 }
 else
-die("Please enter username and a password!");
+{
+	$query = mysql_query ("SELECT * FROM admin_log WHERE ausername='$username'");
+
+$numrows = mysql_num_rows($query);
+
+if ($numrows!=0)
+{
+
+	while ($row = mysql_fetch_array($query))
+{
+	$dbusername = $row['ausername'];
+	$dbpassword = $row['apassword'];
+}
+
+if ($username==$dbusername&&$password==$dbpassword)
+{
+	$_SESSION['username']=$username;
+	//header("location:adpanel.php");
+	echo "login Succefully";
+}
+else
+	echo "Incorrect password!";
+}
+else
+	die ("That user doesn't exist!");
+	
+}
 ?>
