@@ -1,6 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="CSS/formstyle.css">
+
 </head>
 
 
@@ -27,16 +28,31 @@ Welcome Kalpesh!
 </div>
 
 <div id="pdid">
+<div class="ntag1">
+<div id="pd">Student Details</div>
+</div>
+
+<form name="sreg" action="adds.php" method="post">
+<div class="lbl">
+Name <input type="text" placeholder="Student full name" name="name" required="">
+</div>
 
 <div class="lbl">
-Name
+Exam 
+<select>
+<Option>---Select Course---</option>
+<Option>Tally</option>
+<Option>MS-Office</option>
+<Option>D.T.P</option>
+<Option>Hardware & Networking</option>
+</select>
 </div>
+
+</form>
 
 <div>
 
-<div class="ntag1">
-<div id="pd">Personal Details</div>
-</div>
+
 
 
 
