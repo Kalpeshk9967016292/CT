@@ -29,13 +29,17 @@ Welcome Kalpesh!
 <div id="pdid">
 
 <div class="lbl">
-Name
+Name <input type="text" placeholder="Student full name" name="name" required="">
+<br>
+Username <input type="text" placeholder="Student last name" name="name" required="">
 </div>
 
 <div>
 
+<!--
 <div class="ntag1">
 <div id="pd">Personal Details</div>
+-->
 </div>
 
 
