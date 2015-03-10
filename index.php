@@ -27,7 +27,8 @@ Login to start your exam.
 <input type="password" placeholder="Enter Password" name="pass" required="">
 </div>
 
-<input div class="btn" type="submit" value="Login">
+<input div class="btn" name="sbtn" type="submit" value="Login">
+<input div class="abtn" name="abtn" type="submit" value="Admin Login">
 </div>
 </div>
 </form>
