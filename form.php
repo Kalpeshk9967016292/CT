@@ -42,7 +42,7 @@ Name <input type="text" placeholder="Student full name" name="name" required="">
 Name <input type="text" placeholder="Student full name" name="name" required="">
 <br>
 Username <input type="text" placeholder="Student last name" name="name" required="">
-=======
+
 Exam 
 <select>
 <Option>---Select Course---</option>
@@ -51,22 +51,14 @@ Exam
 <Option>D.T.P</option>
 <Option>Hardware & Networking</option>
 </select>
->>>>>>> origin/master
+
 </div>
 
 </form>
 
 <div>
 
-<<<<<<< HEAD
-<!--
-<div class="ntag1">
-<div id="pd">Personal Details</div>
--->
-</div>
-=======
 
->>>>>>> origin/master
 
 
 
