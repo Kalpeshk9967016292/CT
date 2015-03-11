@@ -4,13 +4,10 @@ session_start();
 include('connect.php');
 $username = $_POST['username'];
 $password = $_POST['pass'];
-<<<<<<< HEAD
-$submit = $_POST['sbtn'];
-=======
 
 $submit = $_POST['sbtn'];
 $asubmit = $_POST['abtn'];
->>>>>>> origin/master
+
 
 if($submit)
 {

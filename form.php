@@ -33,26 +33,28 @@ Welcome Kalpesh!
 </div>
 
 <form name="sreg" action="adds.php" method="post">
-<div class="lbl">
-Name <input type="text" placeholder="Student full name" name="name" required="">
-</div>
 
-<div class="lbl">
-<<<<<<< HEAD
-Name <input type="text" placeholder="Student full name" name="name" required="">
+<div id="lbl">
+Name
+</div> 
+<input type="text" placeholder="Student full name" name="name" required="">
 <br>
-Username <input type="text" placeholder="Student last name" name="name" required="">
-
-Exam 
+<div id="lbl">
+Username
+</div>  
+<input type="text" placeholder="Student last name" name="name" required="">
+<br>
+<div id="lbl">
+Exam
+</div> 
 <select>
 <Option>---Select Course---</option>
 <Option>Tally</option>
 <Option>MS-Office</option>
 <Option>D.T.P</option>
 <Option>Hardware & Networking</option>
+<Option>Typing</option>
 </select>
-
-</div>
 
 </form>
 
