@@ -1,6 +1,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="CSS/formstyle.css">
+<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+<script src="js/genusername.js"></script>
 
 </head>
 
@@ -27,38 +29,56 @@ Welcome Kalpesh!
 
 </div>
 
-<div id="pdid">
-<div class="ntag1">
-<div id="pd">Student Details</div>
+<div id="nav">
+<a href="#pd">1. Enter Personal Details</a><br>
+<a href="#cd">2. Enter Course Details</a><br>
+<a href="#ed">3. Enter Exam Details</a><br>
+<a href="#sub">4. Submit Details</a>
 </div>
 
-<form name="sreg" action="adds.php" method="post">
+<div id="section">
 
-<div id="lbl">
-Name
-</div> 
-<input type="text" placeholder="Student full name" name="name" required="">
-<br>
-<div id="lbl">
-Username
-</div>  
-<input type="text" placeholder="Student last name" name="name" required="">
-<br>
-<div id="lbl">
-Exam
-</div> 
-<select>
-<Option>---Select Course---</option>
-<Option>Tally</option>
-<Option>MS-Office</option>
-<Option>D.T.P</option>
-<Option>Hardware & Networking</option>
-<Option>Typing</option>
-</select>
-
+<form>
+  <fieldset>
+    <legend><a id="pd">Personal Details</a></h2></legend>
+    <span>First Name :</span>
+	<span>Last Name :</span>
+	<span>User Name :</span>
+	<br>
+	<input required="" type="text" id="fn" placeholder="First Name">
+	<input required="" type="text" id="ln" placeholder="Last Name">
+	<input required="" type="text" id="us": onFocus="Clear();"; placeholder="User Name">
+  </fieldset>
+  
+    <fieldset>
+    <legend><a id="cd">Course Details</a></h2></legend>
+    <span>Course Name :</span>
+	<span>Faculty Name:</span>
+	<span>Batch time :</span>
+	<br>
+	<input required="" type="text" placeholder="Course Name">
+	<input required="" type="text" placeholder="Faculty Name">
+	<input required="" type="text" placeholder="Batch Time">
+  </fieldset>
+  
+    <fieldset>
+    <legend><a id="ed">Exam Details</a></h2></legend>
+    <span>Exam Time :</span>
+	<span>Duration :</span>
+	<span>Password :</span>
+	<br>
+	<input required="" type="text" placeholder="Exam Time">
+	<input required="" type="text" placeholder="First Name">
+	<input type="password" placeholder="Last Name">
+	</fieldset>
+	
+	<fieldset>
+    <legend><a id="sub">Submit</a></h2></legend>
+    <input type="submit" value="Submit">
+	</fieldset>
 </form>
 
-<div>
+</div>
 
 
 

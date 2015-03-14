@@ -4,10 +4,10 @@ margin: 0px;
 
 #logo{
 background-image: url("../IMG/ctl.png");
-height: 80;
+height: 100;
 background-size: cover;
 background-repeat: no-repeat;
-width: 80;
+width: 100;
 float: left;
 margin-left: 20;
 margin-top: 10;
@@ -23,10 +23,10 @@ padding-left: 530px;
 }
 
 #wbar{
-height: 37px;
-/* border-style: groove; */
-margin-top: 15px;
-background-color: white;
+  height: 37px;
+  /* border-style: groove; */
+  margin-top: 35;
+  background-color: white;
 }
 
 #usn{
@@ -45,74 +45,79 @@ margin-right: 20;
 font-family: 'Slabo 27px', serif;
 }
 
-#select{
-text-align: -webkit-center; 
-font-size: 40px;
-padding-top: 25;
-/*padding-left: 550px;*/
+#nav {
+  width: 20%;
+  float: left;
+  padding-top: 5%;
+  /* text-align: -webkit-center; */
+  background-color: lightseagreen;
+  padding-right: 1;
+  height: 100%;
 }
 
-#pdid{
-border-style: solid;
-  height: 600px;
-  margin-left: 1%;
-  margin-right: 1%;
-  border-radius: 10px;
-  margin-left: 1%;
-  margin-right: 1%;
-  border-radius: 20px;
-  color: cornflowerblue;
-  border-width: thick;
-  MARGIN-TOP: 40PX;
+#nav a{
+ display: block;
+  /* padding-top: 20px; */
+  /*height: 45;*/
+  background-color: rgb(3, 99, 102);
+  transition: color 0.5s,background-color 1s;
+  /* text-align: -webkit-center; */
+  font-size: 130%;
+  padding-left: 10px;
+  text-decoration: initial;
+  color: white;
+  /* vertical-align: middle; */
+  line-height: 1.7;
+
 }
 
-.ntag1{
-margin-top: -20px;
-margin-left: 10%;
-width: 80%;
-font-size: 25px;
-background-color: cornflowerblue;
-height: 40px;
-text-align: -webkit-center;
-border-radius: 5px;
-z-index: -1;
-}
 
-#pd{
-margin-left: 30px;
-padding-top: 5px;
-color: black;
-}
-
-#lbl{
-font-size: 20px;
-  margin-left: 15px;
-  margin-top: 20px; 
-  font-family: 'Slabo 27px', serif;
+#nav a:hover{
+  background-color: white;
   color: black;
-  width: 150px;
-  float: none;
+}
+
+
+
+#section {
+width: 70%;
+  float: left;
+  padding-left: 5%;
+  padding-top: 30px;
+}
+
+#section legend{
+display: block;
+  width: 200px;
+  background-color: lightseagreen;
+  text-align: -webkit-center;
+  border-radius: 2px;
+  font-size: 25;
+  
+}
+
+#section span{
+font-size: 20;
+  line-height: 1.5;
   display: block;
+  width: 32.5%;
+  float: left;
+  font-family: 'Slabo 27px', serif;
 }
 
-input {
-  background: #FFF;
-  height: 30px;
-  width: 100%;
-  border: 1px solid #dedede;
-  line-height: 30px;
-  padding: 0px 6px;
-}
-
-
-select{
-direction: ltr;
-  margin-top: 10;
-  font-family: 'Noticia Text', serif;
-  font-size: 20px;
-  margin-left: 15px;
-  border-radius: 5px;
+#section input{
+font-size: 18;
   text-indent: 5px;
-  width: 250;
+  border-radius: 5px;
+  margin-top: 5px;
+  display: block;
+  /* width: 300px; */
+  float: left;
+  margin-right: 12%;
+  font-family: 'Slabo 27px', serif;
 }
 
+#section fieldset{
+margin-bottom:50px;
+border-radius:10px;
+}
