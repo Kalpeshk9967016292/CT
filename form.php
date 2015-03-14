@@ -53,12 +53,12 @@ Welcome Kalpesh!
     <fieldset>
     <legend><a id="cd">Course Details</a></h2></legend>
     <span>Course Name :</span>
-	<span>Faculty Name:</span>
-	<span>Batch time :</span>
+	<span style= "width:190px;">Batch From:</span>
+	<span>Batch To :</span>
 	<br>
 	<input required="" type="text" placeholder="Course Name">
-	<input required="" type="text" placeholder="Faculty Name">
-	<input required="" type="text" placeholder="Batch Time">
+	<input required="" style= "width:auto;" type="time" placeholder="Faculty Name">
+	<input required="" style= "width:auto;" type="time" placeholder="Batch Time">
   </fieldset>
   
     <fieldset>
@@ -72,10 +72,10 @@ Welcome Kalpesh!
 	<input type="password" placeholder="Last Name">
 	</fieldset>
 	
-	<fieldset>
-    <legend><a id="sub">Submit</a></h2></legend>
+	
+    <div id="sub">
     <input type="submit" value="Submit">
-	</fieldset>
+	</div>
 </form>
 
 </div>
