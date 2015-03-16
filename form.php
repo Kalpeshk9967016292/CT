@@ -7,7 +7,7 @@
 </head>
 
 
-<body bgcolor="neelam">
+<body bgcolor="cadetblue">
 
 <div id="logo">
 

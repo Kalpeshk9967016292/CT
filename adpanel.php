@@ -7,7 +7,7 @@
 <title>CT Exam Admin Panel</title>
 </head>
 
-<body bgcolor="neelam">
+<body bgcolor="cadetblue">
 <?php
 
 error_reporting(0);
