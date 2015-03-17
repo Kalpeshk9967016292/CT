@@ -38,7 +38,7 @@ Welcome Kalpesh!
 
 <div id="section">
 
-<form>
+<form action="register.php" method="post">
   <fieldset>
     <legend><a id="pd">Personal Details</a></h2></legend>
     <span>First Name :</span>
@@ -56,7 +56,7 @@ Welcome Kalpesh!
 	<span style= "width:190px;">Batch From:</span>
 	<span>Batch To :</span>
 	<br>
-	<input required="" type="text" placeholder="Course Name">
+	<input required="" type="text" id="cname" placeholder="Course Name">
 	<input required="" style= "width:auto;" type="time" placeholder="Faculty Name">
 	<input required="" style= "width:auto;" type="time" placeholder="Batch Time">
   </fieldset>
@@ -69,7 +69,7 @@ Welcome Kalpesh!
 	<br>
 	<input required="" type="text" placeholder="Exam Time">
 	<input required="" type="text" placeholder="First Name">
-	<input type="password" placeholder="Last Name">
+	<input type="password" id="pass" placeholder="Last Name">
 	</fieldset>
 	
 	

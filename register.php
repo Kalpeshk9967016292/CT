@@ -2,10 +2,10 @@
 session_start();
 include('connect.php');
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-$name = $_POST['fname'];
-$lname = $_POST['lname'];
+$username = $_POST['us'];
+$password = $_POST['pass'];
+$name = $_POST['fn'];
+$lname = $_POST['ln'];
 $cname= $_POST['cname'];
 $day=$_POST['day'];
 $month=$_POST['month'];
@@ -35,5 +35,5 @@ if ($username&&$password&&$name&&$lname&&$cname&&$edate&&$eduration&&$batch)
 header("location: reg_form.php");
 }
  else
-	die("All field must be filled out<br><a href='registration.php'>Click here</a> to Return");
+	die("All field must be filled out<br><a href='form.php'>Click here</a> to Return");
 ?>
