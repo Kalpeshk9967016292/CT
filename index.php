@@ -14,39 +14,39 @@
 <div class="container">
 
 <div class="row top-buffer">
-	<div class="col-md-4 col-xs-4 "></div>
-	<div class="col-md-4 col-xs-4 center"><img src="IMG/CTL.png" class="img-responsive center-block"></div>
-	<div class="col-md-4 col-xs-4"></div>
+	<div class="col-md-4"></div>
+	<div class="col-md-4 col-xs-12 center"><img src="IMG/CTL.png" class="img-responsive center-block"></div>
+	<div class="col-md-4"></div>
 </div>
 </div>
 
 <div class="container">
 <div class="row">
-	<div class="col-md-4 col-xs-4 "></div>
-	<div class="col-md-4 col-xs-4 "><h1 style="text-align:center;">Login to continue</h1></div>
-	<div class="col-md-4 col-xs-4"></div>
+	<div class="col-md-4"></div>
+	<div class="col-md-4 col-xs-12 "><h1 style="text-align:center;">Login to continue</h1></div>
+	<div class="col-md-4"></div>
 </div>
 
 <form method="post" action="login.php">
 <div class="row ">
-	<div class="col-md-4 col-xs-4 "></div>
-	<div class="col-md-4 col-xs-4 well">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 col-xs-12 well">
 		<input type="text" class="form-control" id="uname" required="" placeholder="Enter Username">
 		<br>
 		<input type="password" class="form-control" id="pass" required="" placeholder="Enter Password"><br>
 	</div>
-	<div class="col-md-4 col-xs-4"></div>
+	<div class="col-md-4"></div>
 </div>
 
 <div class="row txtbx">
-	<div class="col-md-4 col-xs-4 "></div>
-	<div class="col-md-2 col-xs-2 ">
+	<div class="col-md-4 "></div>
+	<div class="col-md-2">
 		<button type="submit" class="btn btn-primary btn-block"><div class="txtbx">Student Login</div></button>
 	</div>
-	<div class="col-md-2 col-xs-2 ">
+	<div class="col-md-2">
 		<button type="submit" class="btn btn-info btn-block"><div class="txtbx">Admin Login</div></button>
 	</div>
-	<div class="col-md-4 col-xs-4"></div>
+	<div class="col-md-4"></div>
 </div>
 </form>
 </div>
