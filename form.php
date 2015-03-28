@@ -11,35 +11,14 @@
 
 <body>
 
-<<<<<<< HEAD
+
 <div class="container-fluid">
 	<div class="row top-buffer well">
 		<div class="col-md-4"><img src="IMG/CTL.png" width="100px" class="img-responsive center-block"></div>
 		<div class="col-md-4"><div class="head">Admin Panel</div></div>
 		<div class="col-md-4"></div>
 	</div>
-=======
-<body bgcolor="cadetblue">
 
-<div id="logo">
-
-</div>
-
-<div id="head">
-Admin Panel
-</div>
-
-<div id="wbar">
-
-<div id="usn">
-Welcome Kalpesh!
-</div>
-
-<div id="dt">
-<a href="logout.php">Log out</a>
-</div>
-
->>>>>>> origin/master
 </div>
 
 <div class="container-fluid">
