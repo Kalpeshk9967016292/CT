@@ -1,5 +1,5 @@
 <html>
-<body bgcolor="neelam">
+<body bgcolor="cadetblue">
 <?php
 error_reporting(E_NOTICE);
 include('connect.php');
