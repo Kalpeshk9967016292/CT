@@ -1,62 +1,62 @@
 <html>
 <head>
+<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/adpanel.css">
-<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="adpanel.js"></script>
-<title>CT Exam Admin Panel</title>
+<title>Admin Panel</title>
 </head>
 
-<body bgcolor="neelam">
-<?php
+<body>
 
-error_reporting(0);
-session_start();
-if($_SESSION['username'])
-{
-?>
-<div id="logo">
-</div>
-
-<div id="head">
-Admin Panel
+<div class="container-fluid">
+	<div class="row top-buffer well">
+		<div class="col-md-4"><img src="IMG/CTL.png" width="100px" class="img-responsive center-block"></div>
+		<div class="col-md-4"><div class="head">Admin Panel</div></div>
+		<div class="col-md-4"></div>
+	</div>
 </div>
 
-<div id="wbar">
-<div id="usn">
-<?php
-error_reporting(E_NOTICE);
-$user =$_SESSION['username']; 
-include('connect.php');
-$result=mysql_query("select * from student_info where Username='$user'");
-while($row=mysql_fetch_assoc($result))
-{
-echo "Welcome ".$row['fname']."!";
-}
-?>
-</div>
-<div id="dt">
-<a href="logout.php" style="text-decoration:none;">Log out</a>
-</div>
+<div class="container-fluid">
+	<div class="row wbar well">
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Welcome Kalpesh!</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Admin Panel</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Logout</h4></div>
+	</div>
 </div>
 
-<!--<div id="select">
-Select a task.
-</div>
--->
 
-<div id="selector">
-<a href="newexa.php" title="New Exam" class="circle" id="NE"></a>
-<a href="ms.php" title="Manage Students" class="circle" id="MS"></a>
-<a href="reex.php" title="Re-exam" class="circle" id="rex"></a>
-<a href="cp.php" title="Check papers" class="circle" id="CP"></a>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-xs-12" style="text-align:center;"><h1>Select a task.</h1></div>
+	</div>
 </div>
-<?php
-}
-else
-{
-header ("location:index.php");
-}
-?>
+
+<div class="container top-buffer2">
+	<div class="row">
+		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
+		<a href="#"><img src="IMG/MS.png" width="150px" class="img-responsive center-block"></a><br>Manage Students
+		</div>
+		
+		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
+		<a href="#"><img src="IMG/NE.png" width="150px" class="img-responsive center-block"></a><br>New Exam
+		</div>
+
+		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
+		<a href="#"><img src="IMG/CP.png" width="150px" class="img-responsive center-block"></a><br>Check answers
+		</div>
+
+		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
+		<a href="#"><img src="IMG/RE.png" width="150px" class="img-responsive center-block"></a><br>Re-Exam
+		</div>
+
+	</div>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>

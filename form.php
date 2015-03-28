@@ -1,88 +1,47 @@
 <html>
 <head>
+<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/formstyle.css">
-<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-<script src="js/genusername.js"></script>
-
+<title>Admin Panel</title>
 </head>
 
+<body>
 
-<body bgcolor="neelam">
-
-<div id="logo">
-
-</div>
-
-<div id="head">
-Admin Panel
-</div>
-
-<div id="wbar">
-
-<div id="usn">
-Welcome Kalpesh!
-</div>
-
-<div id="dt">
-<a href="logout.php">Log out</a>
-</div>
-
-</div>
-
-<div id="nav">
-<a href="#pd">1. Enter Personal Details</a><br>
-<a href="#cd">2. Enter Course Details</a><br>
-<a href="#ed">3. Enter Exam Details</a><br>
-<a href="#sub">4. Submit Details</a>
-</div>
-
-<div id="section">
-
-<form action="register.php" method="post">
-  <fieldset>
-    <legend><a id="pd">Personal Details</a></h2></legend>
-    <span>First Name :</span>
-	<span>Last Name :</span>
-	<span>User Name :</span>
-	<br>
-	<input required="" type="text" id="fn" placeholder="First Name">
-	<input required="" type="text" id="ln" placeholder="Last Name">
-	<input required="" type="text" id="us": onFocus="Clear();"; placeholder="User Name">
-  </fieldset>
-  
-    <fieldset>
-    <legend><a id="cd">Course Details</a></h2></legend>
-    <span>Course Name :</span>
-	<span style= "width:190px;">Batch From:</span>
-	<span>Batch To :</span>
-	<br>
-	<input required="" type="text" id="cname" placeholder="Course Name">
-	<input required="" style= "width:auto;" type="time" placeholder="Faculty Name">
-	<input required="" style= "width:auto;" type="time" placeholder="Batch Time">
-  </fieldset>
-  
-    <fieldset>
-    <legend><a id="ed">Exam Details</a></h2></legend>
-    <span>Exam Time :</span>
-	<span>Duration :</span>
-	<span>Password :</span>
-	<br>
-	<input required="" type="text" placeholder="Exam Time">
-	<input required="" type="text" placeholder="First Name">
-	<input type="password" id="pass" placeholder="Last Name">
-	</fieldset>
-	
-	
-    <div id="sub">
-    <input type="submit" value="Submit">
+<div class="container-fluid">
+	<div class="row top-buffer well">
+		<div class="col-md-4"><img src="IMG/CTL.png" width="100px" class="img-responsive center-block"></div>
+		<div class="col-md-4"><div class="head">Admin Panel</div></div>
+		<div class="col-md-4"></div>
 	</div>
-</form>
+</div>
 
+<div class="container-fluid">
+	<div class="row wbar well">
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Welcome Kalpesh!</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Manage Students</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Logout</h4></div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row top-buffer2">
+		<div class="col-md-2 col-xs-12" style="text-align:center;background-color: cadetblue; height:100vh">
+		<br><a href="#"><div class="mynavbar"><h4>Personal Details</h4></div></a>
+			<a href="#"><div class="mynavbar"><h4>Course Details</h4></div></a>
+			<a href="#"><div class="mynavbar"><h4>Batch Details</h4></div></a>
+			<a href="#"><div class="mynavbar"><h4>Exam Details</h4></div></a>
+		</div>
+		<div class="col-md-10 col-xs-12" style="text-align:center;"><h4>Students Details</h4></div>
+	</div>
 </div>
 
 
 
-
-
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
