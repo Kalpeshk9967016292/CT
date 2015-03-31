@@ -9,12 +9,9 @@
 <title>Admin Panel</title>
 </head>
 
-<<<<<<< HEAD
-<body>
-=======
+
 <body bgcolor="cadetblue">
-<?php
->>>>>>> origin/master
+
 
 <div class="container-fluid">
 	<div class="row top-buffer well">
