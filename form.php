@@ -31,13 +31,63 @@
 
 <div class="container-fluid">
 	<div class="row top-buffer2">
-		<div class="col-md-2 col-xs-12" style="text-align:center;background-color: cadetblue; height:100vh">
-		<br><a href="#"><div class="mynavbar"><h4>Personal Details</h4></div></a>
+		<div class="col-md-2 col-xs-12" style="text-align:center;background-color: cadetblue; height:100%">
+			<a href="#"><div class="mynavbar"><h4>Home</h4></div></a>
 			<a href="#"><div class="mynavbar"><h4>Course Details</h4></div></a>
 			<a href="#"><div class="mynavbar"><h4>Batch Details</h4></div></a>
-			<a href="#"><div class="mynavbar"><h4>Exam Details</h4></div></a>
 		</div>
-		<div class="col-md-10 col-xs-12" style="text-align:center;"><h4>Students Details</h4></div>
+		<div class="col-md-10 col-xs-12" style="height:100%;">
+			<div style="text-align:center;"><h4>Students Details</h4></div>
+			<form role="form">
+				<div class="form-group">
+					<legend>Personal Details</legend>
+						<div class="col-lg-4 col-md-4">
+							<label for="name">Name</label>
+							<input type="text" required="" id="name" class="form-control">
+						</div>
+
+						<div class="col-lg-4 col-md-4">
+							<label for="uname">Usename</label>
+							<input type="text" required="" id="uname" class="form-control">
+						</div>
+
+						<div class="col-lg-4 col-md-4">
+							<label for="pass">Password</label>
+							<input type="password" required="" id="uname" class="form-control"><br>
+						</div>
+						
+				</div>
+
+				<div class="form-group">
+					<legend>Exam Details</legend>
+						<div class="col-lg-3 col-md-4">
+							<label for="et">Exam Time</label>
+							<input type="time" required="" id="et" class="form-control">
+						</div>
+
+						<div class="col-lg-3">
+							<label for="et">Exam Date</label>
+							<input type="date" required="" id="et" class="form-control">
+						</div>
+						
+						<div class="col-lg-3 col-md-4">
+							<label for="course">Course</label>
+							<select required="" id="course" class="form-control">
+								<option>-Select-</option>
+								<option>Tally</option>
+								<option>MS-Office</option>
+								<option>D.T.P</option>
+							</select>
+						</div>
+
+						<div class="col-lg-3">
+							<label for="et">Exam Duration</label>
+							<input type="date" required="" id="et" class="form-control">
+						</div>
+				</div>
+
+			</form>
+		</div>
 	</div>
 </div>
 
