@@ -51,6 +51,17 @@
 </form>
 </div>
 </div>
+
+<footer class="footer">
+      <div class="scontainer">
+      <div class="row">
+      <div class="col-xs-12">
+        <p class="text-muted"><span class="glyphicon glyphicon-copyright-mark"></span> Sapphire web solutions</p>
+      </div>
+      </div>
+      </div>
+</footer>
+
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>

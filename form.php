@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/rvalue.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/formstyle.css">
 <title>Admin Panel</title>
 </head>
@@ -38,7 +39,7 @@
 		</div>
 		<div class="col-md-10 col-xs-12" style="height:100%;">
 			<div style="text-align:center;"><h4>Students Details</h4></div>
-			<form role="form">
+			<form action="addstud.php" method="POST" role="form">
 				<div class="form-group">
 					<legend>Personal Details</legend>
 						<div class="col-lg-4 col-md-4">
@@ -81,16 +82,23 @@
 						</div>
 
 						<div class="col-lg-3">
-							<label for="et">Exam Duration</label>
-							<input type="date" required="" id="et" class="form-control">
-						</div>
+							<label for="et">Exam Duration : </label><b><input type="text" value="30" onchange="updaterangeInput(this.value);" id="textInput" style="width:10%; border-style:none;" value="">Minutes</b>
+							<input type="range" id="rangeInput" min="30" max="60" value="30" onchange="updateTextInput(this.value);"><br>                                                       
+    					</div>
+				</div>
+
+				<div class="form-group">
+					<legend>Submit</legend>
+					<div class="row">
+					<div class="col-md-2 col-xs-12"><input type="submit" value="Submit" style="width:100%;" class="btn btn-primary"></div>
+					<div class="col-md-2 col-xs-12"><input type="reset" value="Reset" style="width:100%;" class="btn btn-danger"></div>
+					</div>
 				</div>
 
 			</form>
 		</div>
 	</div>
 </div>
-
 
 
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
