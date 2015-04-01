@@ -1,7 +1,7 @@
-function Clear() {
-    var str1 = document.getElementById("fn").value;
-    var str2 = document.getElementById("ln").value;
-    document.getElementById("us").value = str1.concat(str2);
+function genu() {
+    var str1 = document.getElementById("name").value;
+    var str2 = document.getElementById("course").value;
+    document.getElementById("uname").value = str1+"_"+str2;
 }
 
 function updateTextInput(val) {

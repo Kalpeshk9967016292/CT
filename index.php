@@ -52,10 +52,10 @@
 </div>
 </div>
 
-<footer class="footer">
+<footer class="hidden-xs footer">
       <div class="scontainer">
       <div class="row">
-      <div class="col-xs-12">
+      <div class="col-md-12">
         <p class="text-muted"><span class="glyphicon glyphicon-copyright-mark"></span> Sapphire web solutions</p>
       </div>
       </div>

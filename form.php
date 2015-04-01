@@ -35,7 +35,7 @@
 		<div class="col-md-2 col-xs-12" style="text-align:center;background-color: cadetblue; height:100%">
 			<a href="#"><div class="mynavbar"><h4>Home</h4></div></a>
 			<a href="#"><div class="mynavbar"><h4>Course Details</h4></div></a>
-			<a href="#"><div class="mynavbar"><h4>Batch Details</h4></div></a>
+			<a href="#"><div class="mynavbar"><h4>Exam Details</h4></div></a>
 		</div>
 		<div class="col-md-10 col-xs-12" style="height:100%;">
 			<div style="text-align:center;"><h4>Students Details</h4></div>
@@ -48,8 +48,8 @@
 						</div>
 
 						<div class="col-lg-4 col-md-4">
-							<label for="uname">Usename</label>
-							<input type="text" required="" id="uname" class="form-control">
+							<label for="uname">Username (Auto-generated)</label>
+							<input type="text" required="" id="uname" class="form-control" disabled="">
 						</div>
 
 						<div class="col-lg-4 col-md-4">
@@ -73,7 +73,7 @@
 						
 						<div class="col-lg-3 col-md-4">
 							<label for="course">Course</label>
-							<select required="" id="course" class="form-control">
+							<select required="" id="course" onchange="genu();" class="form-control">
 								<option>-Select-</option>
 								<option>Tally</option>
 								<option>MS-Office</option>
@@ -90,8 +90,8 @@
 				<div class="form-group">
 					<legend>Submit</legend>
 					<div class="row">
-					<div class="col-md-2 col-xs-12"><input type="submit" value="Submit" style="width:100%;" class="btn btn-primary"></div>
-					<div class="col-md-2 col-xs-12"><input type="reset" value="Reset" style="width:100%;" class="btn btn-danger"></div>
+					<div class="col-md-3 col-xs-12 center"><input type="submit" value="Submit" style="width:100%;" class="btn btn-primary"></div>
+					<div class="col-md-3 col-xs-12"><input type="reset" value="Reset" style="width:100%;" class="btn btn-danger"></div>
 					</div>
 				</div>
 
