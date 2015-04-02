@@ -1,3 +1,8 @@
+<?php
+session_start();
+if($_SESSION['username'])
+{
+?>
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'><meta charset="utf-8">
@@ -7,10 +12,17 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/adpanel.css">
 <title>Admin Panel</title>
+
+<script type="text/javascript">
+window.history.forward(1);
+function noBack(){
+window.history.forward();
+}
+</script>
 </head>
 
 
-<body bgcolor="cadetblue">
+<body bgcolor="cadetblue" onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
 
 
 <div class="container-fluid">
@@ -23,9 +35,9 @@
 
 <div class="container-fluid">
 	<div class="row wbar well">
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Welcome Kalpesh!</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome,".$_SESSION['username']."!";?></h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Admin Panel</h4></div>
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Logout</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><a href="logout.php">Logout</a></h4></div>
 	</div>
 </div>
 
@@ -62,3 +74,10 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+}
+else
+{
+header ("location:index.php");
+}
+?>

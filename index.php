@@ -8,11 +8,19 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <title>CT Exam</title>
 </head>
-
 <body>
 
 <div class="container">
-
+<?php 
+$umsg = "";
+$pmsg = "";
+if(isset($_GET['umsg'])){
+	$umsg = $_GET['umsg'];
+}
+if(isset($_GET['pmsg'])){
+	$pmsg = $_GET['pmsg'];	
+}
+?>
 <div class="row top-buffer">
 	<div class="col-md-4"></div>
 	<div class="col-md-4 col-xs-12 center"><img src="IMG/CTL.png" class="img-responsive center-block"></div>
@@ -31,9 +39,10 @@
 <div class="row ">
 	<div class="col-md-4"></div>
 	<div class="col-md-4 col-xs-12 well">
-		<input type="text" class="form-control" id="uname" required="" placeholder="Enter Username">
-		<br>
-		<input type="password" class="form-control" id="pass" required="" placeholder="Enter Password"><br>
+		<input type="text" class="form-control" id="uname" required="" name="uname" placeholder="Enter Username">
+		<?php echo "<font color='red'>".$umsg."</font>"; ?><br>
+		<input type="password" class="form-control" id="pass" required="" name="pass" placeholder="Enter Password">
+		<?php echo "<font color='red'>".$pmsg."</font>"; ?><br>
 	</div>
 	<div class="col-md-4"></div>
 </div>
@@ -41,10 +50,10 @@
 <div class="row txtbx">
 	<div class="col-md-4 "></div>
 	<div class="col-md-2">
-		<button type="submit" class="btn btn-primary btn-block"><div class="txtbx">Student Login</div></button>
+		<button type="submit" class="btn btn-primary btn-block" name="btn" value="slogin"><div class="txtbx">Student Login</div></button>
 	</div>
 	<div class="col-md-2">
-		<button type="submit" class="btn btn-info btn-block"><div class="txtbx">Admin Login</div></button>
+		<button type="submit" class="btn btn-info btn-block" name="btn" value="alogin"><div class="txtbx">Admin Login</div></button>
 	</div>
 	<div class="col-md-4"></div>
 </div>

@@ -1,18 +1,14 @@
 <?php
-error_reporting(0);
+
 session_start();
 include('connect.php');
-$username = $_POST['username'];
+$username = $_POST['uname'];
 $password = $_POST['pass'];
 
-$submit = $_POST['sbtn'];
-$asubmit = $_POST['abtn'];
+$submit = $_POST['btn'];
 
-
-if($submit)
+if($submit == slogin)
 {
-	if($submit)
-	{
 $query = mysql_query ("SELECT * FROM student_log WHERE susername='$username'");
 
 $numrows = mysql_num_rows($query);
@@ -29,13 +25,21 @@ if ($numrows!=0)
 if ($username==$dbusername&&$password==$dbpassword)
 {
 	$_SESSION['username']=$username;
-	header("location:adpanel.php");
+	header("location:sdpanel.php");
 }
 else
-	echo "Incorrect password!";
+{
+	  $pmsg = 'Password Incorrect';
+	  header('location: index.php?pmsg='.$pmsg.'');
+	  exit();
+}
 }
 else
-	die ("That user doesn't exist!");
+{
+	  $umsg = 'That user does not exist!';
+	  header('location: index.php?umsg='.$umsg.'');
+	  exit();
+}
 }
 else{
 	$query = mysql_query ("SELECT * FROM admin_log WHERE ausername='$username'");
@@ -55,41 +59,25 @@ if ($username==$dbusername&&$password==$dbpassword)
 {
 	$_SESSION['username']=$username;
 	echo "Login Sucessfully";
-	//header("location:adpanel.php");
+	header("location:adpanel.php");
 }
 else
-	echo "Incorrect password!";
-}
-else
-	die ("That user doesn't exist!");
+{
+	$pmsg = 'Incorrect password';
+	  header('location: index.php?pmsg='.$pmsg.'');
+	  exit();
 }
 }
 else
 {
-	$query = mysql_query ("SELECT * FROM admin_log WHERE ausername='$username'");
-
-$numrows = mysql_num_rows($query);
-
-if ($numrows!=0)
-{
-
-	while ($row = mysql_fetch_array($query))
-{
-	$dbusername = $row['ausername'];
-	$dbpassword = $row['apassword'];
+	  $umsg = 'That user does not exist!';
+	  header('location: index.php?umsg='.$umsg.'');
+	  exit();
 }
-
-if ($username==$dbusername&&$password==$dbpassword)
-{
-	$_SESSION['username']=$username;
-	//header("location:adpanel.php");
-	echo "login Succefully";
-}
-else
-	echo "Incorrect password!";
-}
-else
-	die ("That user doesn't exist!");
-	
 }
 ?>
+<html>
+<body>
+redirecting ...
+</body>
+</html>
