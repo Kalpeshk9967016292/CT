@@ -27,7 +27,7 @@ window.history.forward();
 
 <div class="container-fluid">
 	<div class="row top-buffer well">
-		<div class="col-md-4"><img src="IMG/CTL.png" width="100px" class="img-responsive center-block"></div>
+		<div class="col-md-4"><img src="IMG/CTL.png" width="80px" class="img-responsive center-block"></div>
 		<div class="col-md-4"><div class="head">Admin Panel</div></div>
 		<div class="col-md-4"></div>
 	</div>

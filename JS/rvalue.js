@@ -11,3 +11,4 @@ function updateTextInput(val) {
 function updaterangeInput(val2) {
       document.getElementById('rangeInput').value=val2; 
 }
+

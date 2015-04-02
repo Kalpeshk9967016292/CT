@@ -1,0 +1,32 @@
+.head{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+body{
+    margin: 0px;
+}
+
+.top-buffer{ 
+    padding: 10px;
+}
+
+.top-buffer2{ 
+    margin-top: -20px;
+}
+
+.wbar{
+    padding: 10px;
+    background-color: #8B97D5;
+    margin-top: -20px;
+}
+
+.mynavbar{
+  background-color: cadetblue;
+}
+
+.tqb{
+  margin-bottom: 15px;
+}
+
