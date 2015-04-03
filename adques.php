@@ -26,7 +26,7 @@
 	<div class="row wbar well">
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Welcome Kalpesh!</h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Add Question</h4></div>
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Logout</h4></div>
+		<a href="adpanel.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
 	</div>
 </div>
 
@@ -41,7 +41,7 @@
 			<div class="tqb btn btn-primary" id="brfbtn" style="width:100%;">Brief</div>
 			<div class="tqb btn btn-primary" id="skbtn" style="width:100%;">Shortcut keys</div>
 			<h4>Navigation</h4><hr>
-			<div class="tqb btn btn-primary" id="bkbtn" style="width:100%;">Back</div>
+			<a href="adpanel.php"><div class="tqb btn btn-primary" id="bkbtn" style="width:100%;">Back</div></a>
 		</div>
 		<!--1st col large end -->
 

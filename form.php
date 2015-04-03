@@ -31,14 +31,14 @@ if($_SESSION['username'])
 	<div class="row wbar well">
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome ".$_SESSION['username']."!";?></h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Manage Students</h4></div>
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><a href="logout.php">Logout</a></h4></div>
+		<a href="logout.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
 	</div>
 </div>
 
 <div class="container-fluid">
 	<div class="row top-buffer2">
 		<div class="col-md-2 col-xs-12" style="text-align:center;background-color: cadetblue; height:100%">
-			<a href="#"><div class="mynavbar"><h4>Home</h4></div></a>
+			<a href="adpanel.php"><div class="mynavbar"><h4>Home</h4></div></a>
 			<a href="#"><div class="mynavbar"><h4>Course Details</h4></div></a>
 			<a href="#"><div class="mynavbar"><h4>Exam Details</h4></div></a>
 		</div>

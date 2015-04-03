@@ -13,12 +13,6 @@ if($_SESSION['username'])
 <link rel="stylesheet" type="text/css" href="CSS/adpanel.css">
 <title>Admin Panel</title>
 
-<script type="text/javascript">
-window.history.forward(1);
-function noBack(){
-window.history.forward();
-}
-</script>
 </head>
 
 
@@ -37,7 +31,7 @@ window.history.forward();
 	<div class="row wbar well">
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome,".$_SESSION['username']."!";?></h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Admin Panel</h4></div>
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><a href="logout.php">Logout</a></h4></div>
+		<a href="logout.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
 	</div>
 </div>
 
@@ -55,7 +49,7 @@ window.history.forward();
 		</div>
 		
 		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="#"><img src="IMG/NE.png" width="150px" class="img-responsive center-block"></a><br>New Exam
+		<a href="adques.php"><img src="IMG/NE.png" width="150px" class="img-responsive center-block"></a><br>New Exam
 		</div>
 
 		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
