@@ -151,7 +151,7 @@ if($_SESSION['username'])
 			<div class="bfq">
 				<form action="addmcq.php" method="post">
 					<div class="form-group">
-						<legend>True or False</legend>
+						<legend>Brief</legend>
 						<div class="col-md-12"> 
 						<label for ="bfq">Question</label>
 						<input type="textarea" required="" id="bfq" class="form-control"><br>
