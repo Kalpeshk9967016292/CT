@@ -157,12 +157,6 @@ if($_SESSION['username'])
 						<input type="textarea" required="" id="bfq" class="form-control"><br>
 						</div>
 						
-						<div class="col-md-12">
-							<label for="course">Answer</label>
-							<input type="textarea" required="" id="bfa" class="form-control"><br>
-						</div>
-
-
 						<div class="col-md-4">
 							<br><br><button style="width:50%;" class="btn btn-primary" type="sumbit">Submit</button>
 						</div>
