@@ -51,7 +51,7 @@ window.history.forward();
 <div class="container top-buffer2">
 	<div class="row">
 		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="#"><img src="IMG/MS.png" width="150px" class="img-responsive center-block"></a><br>Manage Students
+		<a href="form.php"><img src="IMG/MS.png" width="150px" class="img-responsive center-block"></a><br>Manage Students
 		</div>
 		
 		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
