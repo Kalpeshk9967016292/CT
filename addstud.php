@@ -30,6 +30,6 @@ if($user && $name && $username && $password && $examtime && $examdate && $course
 }
 else
 {
-	die("All field must be exist");
+	die("All field should exist");
 }
 ?>
