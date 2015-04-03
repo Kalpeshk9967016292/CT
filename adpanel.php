@@ -12,7 +12,7 @@ if($_SESSION['username'])
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/adpanel.css">
 <title>Admin Panel</title>
-
+<link rel="icon" type="image/gif" href="IMG/CTL.png">
 </head>
 
 
