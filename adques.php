@@ -39,7 +39,7 @@
 			<div class="tqb btn btn-primary" id="mcqbtn" style="width:100%;">MCQ</div>
 			<div class="tqb btn btn-primary" id="tfbtn" style="width:100%;">True or False</div>
 			<div class="tqb btn btn-primary" id="brfbtn" style="width:100%;">Brief</div>
-			<div class="tqb btn btn-primary" id="skbtn" style="width:100%;">Shortcut keys</div>
+			
 			<h4>Navigation</h4><hr>
 			<a href="adpanel.php"><div class="tqb btn btn-primary" id="bkbtn" style="width:100%;">Back</div></a>
 		</div>
@@ -52,7 +52,7 @@
 					<div class="col-md-3 col-sm-6"><div class="tqb btn btn-primary" id="mcqbtn" style="width:100%;">MCQ</div></div>
 					<div class="col-md-3 col-sm-6"><div class="tqb btn btn-primary" style="width:100%;">True or False</div></div>
 					<div class="col-md-3 col-sm-6"><div class="tqb btn btn-primary" style="width:100%;">Brief</div></div>
-					<div class="col-md-3 col-sm-6"><div class="tqb btn btn-primary" style="width:100%;">Shortcut Keys</div></div>
+					
 					<h4>Navigation</h4><hr>
 					<div class="col-md-12 col-sm-12"><div class="tqb btn btn-primary" style="width:100%;">Back</div></div>
 			</div>
@@ -140,6 +140,35 @@
 				</form>
 			</div>
 			<!--TF Questions-->
+
+			<!--Brief Questions-->
+			<div class="bfq">
+				<form action="addmcq.php" method="post">
+					<div class="form-group">
+						<legend>True or False</legend>
+						<div class="col-md-12"> 
+						<label for ="bfq">Question</label>
+						<input type="textarea" required="" id="bfq" class="form-control"><br>
+						</div>
+						
+						<div class="col-md-12">
+							<label for="course">Answer</label>
+							<input type="textarea" required="" id="bfa" class="form-control"><br>
+						</div>
+
+
+						<div class="col-md-4">
+							<br><br><button style="width:50%;" class="btn btn-primary" type="sumbit">Submit</button>
+						</div>
+
+						<div class="col-md-4">
+							<br><br><button style="width:50%;" class="btn btn-danger" type="reset">Reset</button>
+						</div>
+
+					</div>
+				</form>
+			</div>
+			<!--Brief Questions-->
 			
 		</div>
 	</div>
