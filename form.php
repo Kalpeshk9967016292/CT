@@ -13,6 +13,7 @@ if($_SESSION['username'])
 <script src="js/rvalue.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/formstyle.css">
 <title>Admin Panel</title>
+<link rel="icon" type="image/gif" href="IMG/CTL.png">
 </head>
 
 <body>

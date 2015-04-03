@@ -1,3 +1,8 @@
+<?php
+session_start();
+if($_SESSION['username'])
+{
+?>
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'><meta charset="utf-8">
@@ -8,6 +13,7 @@
 <script src="js/shques.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/adq.css">
 <title>Admin Panel</title>
+<link rel="icon" type="image/gif" href="IMG/CTL.png">
 </head>
 
 
@@ -26,7 +32,7 @@
 	<div class="row wbar well">
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Welcome Kalpesh!</h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Add Question</h4></div>
-		<a href="adpanel.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
+		<a href="logout.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
 	</div>
 </div>
 
@@ -68,31 +74,31 @@
 						<legend>Multiple Choice Questions</legend>
 						<div class="col-md-12"> 
 						<label for ="mcqq">Question</label>
-						<input type="text" required="" id="mcqq" class="form-control"><br>
+						<input type="text" required="" id="mcqq" class="form-control" name="desc"><br>
 						</div>
 						
 						<div class="col-md-6">
 							<label for="mcq1">Option 1</label>
-							<input type="text" required="" id="mcq1" class="form-control">
-							<label> <input type="radio"> Correct Answer </label>
+							<input type="text" required="" id="mcq1" class="form-control" name="mcanswer1">
+							<label> <input type="radio" name="iscorrect" value="answer1"> Correct Answer </label>
 						</div>
 
 						<div class="col-md-6">
 							<label for="mcq2">Option 1</label>
-							<input type="text" required="" id="mcq2" class="form-control">
-							<label> <input type="radio"> Correct Answer </label>
+							<input type="text" required="" id="mcq2" class="form-control" name="mcanswer2">
+							<label> <input type="radio" name="iscorrect" value="answer2"> Correct Answer </label>
 						</div>
 
 						<div class="col-md-6">
 							<label for="mcq3">Option 1</label>
-							<input type="text" required="" id="mcq3" class="form-control">
-							<label> <input type="radio"> Correct Answer </label>
+							<input type="text" required="" id="mcq3" class="form-control" name="mcanswer3">
+							<label> <input type="radio" name="iscorrect" value="answer3"> Correct Answer </label>
 						</div>
 
 						<div class="col-md-6">
 							<label for="mcq4">Option 1</label>
-							<input type="text" required="" id="mcq4" class="form-control">
-							<label> <input type="radio"> Correct Answer </label>
+							<input type="text" required="" id="mcq4" class="form-control" name="mcanswer4">
+							<label> <input type="radio" name="iscorrect" value="answer4"> Correct Answer </label>
 						</div>
 
 						<div class="col-md-4">
@@ -115,15 +121,15 @@
 						<legend>True or False</legend>
 						<div class="col-md-12"> 
 						<label for ="tfq">Question</label>
-						<input type="textarea" required="" id="mcqq" class="form-control"><br>
+						<input type="textarea" required="" id="mcqq" class="form-control" name="desc"><br>
 						</div>
 						
 						<div class="col-md-12">
-							<label for="course">Answer</label>
-							<select required="" id="tfans" class="form-control">
+							<label for="course">Correct Answer</label>
+							<select required="" id="tfans" class="form-control" name="iscorrect">
 								<option>-Select-</option>
-								<option>True</option>
-								<option>False</option>
+								<option value="answer1">True</option>
+								<option value="answer2">False</option>
 							</select>
 						</div>
 
@@ -182,3 +188,10 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+}
+else
+{
+header ("location:index.php");
+}
+?>

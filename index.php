@@ -12,6 +12,7 @@
     setTimeout("preventBack()", 0);
     window.onunload=function(){null};
 </script>
+<link rel="icon" type="image/gif" href="IMG/CTL.png">
 </head>
 <body>
 
