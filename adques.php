@@ -2,6 +2,10 @@
 session_start();
 if($_SESSION['username'])
 {
+$msg = "";
+if(isset($_GET['msg'])){
+	$msg = $_GET['msg'];
+}
 ?>
 <html>
 <head>
@@ -30,7 +34,7 @@ if($_SESSION['username'])
 
 <div class="container-fluid">
 	<div class="row wbar well">
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Welcome Kalpesh!</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome ".$_SESSION['username']."!";?></h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Add Question</h4></div>
 		<a href="logout.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
 	</div>
@@ -64,12 +68,13 @@ if($_SESSION['username'])
 			</div>
 		</div>
 		<!--1st col ms-xs-sm end -->
-
+		
 		<div class="col-lg-10 well">
+			<?php echo $msg; ?><hr>
 			<div style="text-align:center;"><h4>Set Questions</h4></div><hr>
 			<!--MCQ Questions-->
 			<div class="mcq">
-				<form action="addmcq.php" method="post">
+				<form action="addQuestions.php" method="post">
 					<div class="form-group">
 						<legend>Multiple Choice Questions</legend>
 						<div class="col-md-12"> 
@@ -79,29 +84,30 @@ if($_SESSION['username'])
 						
 						<div class="col-md-6">
 							<label for="mcq1">Option 1</label>
-							<input type="text" required="" id="mcq1" class="form-control" name="mcanswer1">
+							<input type="text" required="" id="mcq1" class="form-control" name="answer1">
 							<label> <input type="radio" name="iscorrect" value="answer1"> Correct Answer </label>
 						</div>
 
 						<div class="col-md-6">
-							<label for="mcq2">Option 1</label>
-							<input type="text" required="" id="mcq2" class="form-control" name="mcanswer2">
+							<label for="mcq2">Option 2</label>
+							<input type="text" required="" id="mcq2" class="form-control" name="answer2">
 							<label> <input type="radio" name="iscorrect" value="answer2"> Correct Answer </label>
 						</div>
 
 						<div class="col-md-6">
-							<label for="mcq3">Option 1</label>
-							<input type="text" required="" id="mcq3" class="form-control" name="mcanswer3">
+							<label for="mcq3">Option 3</label>
+							<input type="text" required="" id="mcq3" class="form-control" name="answer3">
 							<label> <input type="radio" name="iscorrect" value="answer3"> Correct Answer </label>
 						</div>
 
 						<div class="col-md-6">
-							<label for="mcq4">Option 1</label>
-							<input type="text" required="" id="mcq4" class="form-control" name="mcanswer4">
+							<label for="mcq4">Option 4</label>
+							<input type="text" required="" id="mcq4" class="form-control" name="answer4">
 							<label> <input type="radio" name="iscorrect" value="answer4"> Correct Answer </label>
 						</div>
 
 						<div class="col-md-4">
+							<input type="hidden" value="mc" name="type">
 							<br><br><button style="width:50%;" class="btn btn-primary" type="sumbit">Submit</button>
 						</div>
 
@@ -116,7 +122,7 @@ if($_SESSION['username'])
 
 			<!--TH Questions-->
 			<div class="tfq">
-				<form action="addmcq.php" method="post">
+				<form action="addQuestions.php" method="post">
 					<div class="form-group">
 						<legend>True or False</legend>
 						<div class="col-md-12"> 
@@ -135,6 +141,7 @@ if($_SESSION['username'])
 
 
 						<div class="col-md-4">
+							<input type="hidden" value="tf" name="type">
 							<br><br><button style="width:50%;" class="btn btn-primary" type="sumbit">Submit</button>
 						</div>
 
@@ -149,15 +156,16 @@ if($_SESSION['username'])
 
 			<!--Brief Questions-->
 			<div class="bfq">
-				<form action="addmcq.php" method="post">
+				<form action="addQuestions.php" method="post">
 					<div class="form-group">
 						<legend>Brief</legend>
 						<div class="col-md-12"> 
 						<label for ="bfq">Question</label>
-						<input type="textarea" required="" id="bfq" class="form-control"><br>
+						<input type="textarea" required="" id="bfq" class="form-control" name="desc"><br>
 						</div>
 						
 						<div class="col-md-4">
+							<input type="hidden" value="bq" name="type">
 							<br><br><button style="width:50%;" class="btn btn-primary" type="sumbit">Submit</button>
 						</div>
 

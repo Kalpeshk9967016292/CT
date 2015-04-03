@@ -29,7 +29,7 @@ if($_SESSION['username'])
 
 <div class="container-fluid">
 	<div class="row wbar well">
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome,".$_SESSION['username']."!";?></h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome ".$_SESSION['username']."!";?></h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Admin Panel</h4></div>
 		<a href="logout.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
 	</div>
