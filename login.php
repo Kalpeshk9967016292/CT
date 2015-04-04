@@ -3,6 +3,7 @@
 session_start();
 include('connect.php');
 $username = $_POST['uname'];
+$username = ucfirst(strtolower($username));
 $password = $_POST['pass'];
 
 $submit = $_POST['btn'];
