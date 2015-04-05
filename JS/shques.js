@@ -5,7 +5,7 @@ $(".mcq").hide();
 $(".tfq").hide();
 $(".bfq").hide();
 
-$(".alert").fadeOut(1000);
+$(".alert").fadeOut(3000);
 
 $(".assdiv").hide();
 $(".deldiv").hide();
@@ -38,5 +38,13 @@ $("#dsbtn").click(function(){
         $(".deldiv").slideToggle(500);
     });
 
+$("#delicon").click(function(){
+        $(".deldiv").slideUp(500);
+        $(".assdiv").slideToggle(500);
+    });
+
+function hideRow(row){
+		$(#+row).slideUp(500);
+};
 
 });

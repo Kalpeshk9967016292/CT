@@ -166,20 +166,24 @@ $res = mysql_num_rows($sql)
 								<th>Date</th>
 								<th>Course</th>
 								<th>Duration</th>
+								<th>Edit</th>
+								<th>Delete</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php 
 								if ($res!=0) {
 									while ($row=mysql_fetch_array($sql)) {
-										echo "<tr><td>".$row['stud_id']."</td>";
+										echo "<tr div class=".$row['stud_id']."><td>".$row['stud_id']."</td>";
 										echo "<td>".$row['name']."</td>";
 										echo "<td>".$row['username']."</td>";
 										echo "<td>***********</td>";
 										echo "<td>".$row['exam_time']."</td>";
 										echo "<td>".$row['exam_date']."</td>";
 										echo "<td>".$row['course']."</td>";
-										echo "<td>".$row['exam_duration']."</td></tr>";
+										echo "<td>".$row['exam_duration']."</td>";
+										echo "<td><span id='delicon' class='glyphicon glyphicon-edit center-block'></span></td>";
+										echo "<td><span onclick='hideRow(".$row['stud_id'].")' class='glyphicon glyphicon-remove center-block'></span></td></tr>";
 									}
 								}
 							?>

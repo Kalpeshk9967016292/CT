@@ -43,8 +43,8 @@ else
 }
 }
 else{
-	$query = mysql_query ("SELECT * FROM admin_log WHERE ausername='$username'");
 
+$query = mysql_query ("SELECT * FROM admin_log WHERE ausername='$username'");
 $numrows = mysql_num_rows($query);
 
 if ($numrows!=0)
