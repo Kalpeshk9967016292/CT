@@ -6,6 +6,11 @@ $msg = "";
 if(isset($_GET['msg'])){
 	$msg = $_GET['msg'];
 }
+
+$emsg = "";
+if(isset($_GET['emsg'])){
+	$emsg = $_GET['emsg'];
+}
 ?>
 <html>
 <head>
@@ -70,8 +75,10 @@ if(isset($_GET['msg'])){
 		<!--1st col ms-xs-sm end -->
 		
 		<div class="col-lg-10 well">
-			<?php echo $msg; ?><hr>
-			<div style="text-align:center;"><h4>Set Questions</h4></div><hr>
+			<div style="text-align:center;"><b>Set Questions</b></div><hr>						
+			<?php echo $msg ?>
+			<?php echo $emsg ?>
+			
 			<!--MCQ Questions-->
 			<div class="mcq">
 				<form action="addQuestions.php" method="post">

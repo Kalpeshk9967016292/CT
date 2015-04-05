@@ -38,26 +38,22 @@ if($_SESSION['username'])
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 col-xs-12" style="text-align:center;"><h1>Select a task.</h1></div>
+		<div class="col-md-12 col-xs-12" style="text-align:center;"><h1>Select Subject.</h1></div>
 	</div>
 </div>
 
 <div class="container top-buffer2">
 	<div class="row">
-		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="manage.php"><img src="IMG/MS.png" width="150px" class="img-responsive center-block"></a><br>Manage Students
+		<div class="col-md-4 col-xs-6 top-buffer" style="text-align:center;">
+		<a href="manage.php"><img src="IMG/MSO.png" width="150px" class="img-responsive center-block"></a><br>MS-Office
 		</div>
 		
-		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="adques.php"><img src="IMG/NE.png" width="150px" class="img-responsive center-block"></a><br>New Exam
+		<div class="col-md-4 col-xs-6 top-buffer" style="text-align:center;">
+		<a href="adques.php"><img src="IMG/tal.png" width="150px" class="img-responsive center-block"></a><br>Tally
 		</div>
 
-		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="#"><img src="IMG/CP.png" width="150px" class="img-responsive center-block"></a><br>Check answers
-		</div>
-
-		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="#"><img src="IMG/RE.png" width="150px" class="img-responsive center-block"></a><br>Re-Exam
+		<div class="col-md-4 col-xs-12 top-buffer" style="text-align:center;">
+		<a href="#"><img src="IMG/dtp.png" width="150px" class="img-responsive center-block"></a><br>D.T.P
 		</div>
 
 	</div>

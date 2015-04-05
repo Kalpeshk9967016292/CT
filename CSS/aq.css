@@ -1,0 +1,34 @@
+.head{
+	font-size: 40px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+body{
+	margin: 0px;
+}
+
+.top-buffer{ 
+	padding: 5px;
+}
+
+.top-buffer2{ 
+	margin-top: 40px;
+}
+
+.wbar{
+	padding: 10px;
+  	background-color: #8B97D5;
+  	margin-top: -20px;
+}
+
+.navs{
+	background-color:aliceblue;
+	width:100%;
+	
+}
+
+.navbar1{
+background-color:cadetblue;
+height:69%;
+}

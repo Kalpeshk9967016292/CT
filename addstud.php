@@ -27,9 +27,13 @@ if($user && $name && $username && $password && $examtime && $examdate && $course
 {
 	mysql_query("INSERT INTO stud_info(user,name,username,exam_time,exam_date,course,exam_duration)VALUES('$user','$name','$username','$examtime','$examdate','$course','$examduration')");
 	mysql_query("INSERT INTO student_log(susername,spassword) VALUES('$username',$password)");
+	$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
+	header('location: manage.php?msg='.$msg.'');
+	exit();
 }
 else
 {
-	die("All field should exist");
+	$msg = '<div class="alert alert-danger">Question added sucessfully!</div>';
+	header('location: manage.php?msg='.$msg.'');
 }
 ?>

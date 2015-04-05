@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_NOTICE);
 session_start();
 if($_SESSION['username'])
 {
@@ -6,46 +7,52 @@ if($_SESSION['username'])
 	$user = $_SESSION['username'];
 	$user = ucfirst(strtolower($user));
 	$question = $_POST['desc'];
-	$answer1 = $_POST['answer1'];
-	$answer2 = $_POST['answer2'];
-	$answer3 = $_POST['answer3'];
-	$answer4 = $_POST['answer4'];
 	$type = $_POST['type'];
-	$isCorrect = $_POST['iscorrect'];
-	
+		
 	if($_POST['type'] == 'bq'){
 		if((!$_POST['desc'])){
-			echo "Sorry, All fields must be filled in to add a new question to the quiz. Please press back in your browser and try again for bq.";
+			$emsg = '<div class="alert alert-danger">Sorry, important data missing</div>';
+		header ('location: adques.php?emsg='.$emsg.'');
+		exit();
 		}
 		else{
 			$sql = mysql_query("INSERT INTO questions (user,question, type) VALUES ('$user','$question', '$type')")or die(mysql_error());
 			$lastId = mysql_insert_id();
 		mysql_query("UPDATE questions SET question_id='$lastId' WHERE id='$lastId' LIMIT 1")or die(mysql_error());
-			$msg = 'Thanks, your question has been added';
+			$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
 			header('location: adques.php?msg='.$msg.'');
 	exit();
 		}
 	}
 	else {
+		$isCorrect = $_POST['iscorrect'];
+		$answer1 = $_POST['answer1'];
+	$answer2 = $_POST['answer2'];
+	$answer3 = $_POST['answer3'];
+	$answer4 = $_POST['answer4'];
 if(isset($_POST['desc'])){
 	if(!isset($_POST['iscorrect']) || $_POST['iscorrect'] == ""){
-		echo "Sorry, important data to submit your question is missing.";
+		$emsg = '<div class="alert alert-danger">Sorry, important data to submit your question is missing.</div>';
+		header ('location: adques.php?emsg='.$emsg.'');
 		exit();
 	}
 	if(!isset($_POST['type']) || $_POST['type']== ""){
-		echo "Sorry, there was an error parsing the form. Please press back in your browser and try again";
+		$emsg = '<div class="alert alert-danger">Sorry, there was an error parsing the form. Please press back in your browser and try again</div>';
+		header ('location: adques.php?emsg='.$emsg.'');
 		exit();
 	}
 	
 	if($type == 'tf'){
 	if((!$question)|| (!$isCorrect)){
-		echo "Sorry, All fields must be filled in to add a new question to the quiz. Please press back in your browser and try again for tf.";
+		$emsg = '<div id="amessage" class="alert alert-danger">Sorry, All fields must be filled in to add a new question to the quiz. Please press back in your browser and try again for tf.</div>';
+		header ('location: adques.php?emsg='.emsg.'');
 		exit();
 		}
 	}
 	if($type == 'mc'){
 	if((!$question) || (!$answer1) || (!$answer2) || (!$answer3) || (!$answer4) || (!$isCorrect)){
-		echo "Sorry, All fields must be filled in to add a new question to the quiz. Please press back in your browser and try again for mc.";
+		$emsg = '<div id="amessage" class="alert alert-danger">Sorry, All fields must be filled in to add a new question to the quiz. Please press back in your browser and try again for tf.</div>';
+		header ('location: adques.php?emsg='.emsg.'');
 		exit();
 		}
 	}
@@ -57,14 +64,14 @@ if(isset($_POST['desc'])){
 		if($isCorrect == "answer1"){
 		$sql2 = mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', 'True', '1')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', 'False', '0')")or die(mysql_error());
-		$msg = 'Thanks, your question has been added';
+		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
 	  header('location: adques.php?msg='.$msg.'');
 	exit();
 	}
 	if($isCorrect == "answer2"){
 		$sql2 = mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', 'False', '1')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', 'True', '0')")or die(mysql_error());
-		$msg = 'Thanks, your question has been added';
+		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
 	  header('location: adques.php?msg='.$msg.'');
 	exit();
 		}	
@@ -75,7 +82,7 @@ if(isset($_POST['desc'])){
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer2', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer3', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer4', '0')")or die(mysql_error());
-		$msg = 'Thanks, your question has been added';
+		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
 	  header('location: adques.php?msg='.$msg.'');
 	exit();
 	}
@@ -84,7 +91,7 @@ if(isset($_POST['desc'])){
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer1', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer3', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer4', '0')")or die(mysql_error());
-		$msg = 'Thanks, your question has been added';
+		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
 	  header('location: adques.php?msg='.$msg.'');
 	exit();
 	}
@@ -93,7 +100,7 @@ if(isset($_POST['desc'])){
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer1', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer2', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer4', '0')")or die(mysql_error());
-		$msg = 'Thanks, your question has been added';
+		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
 	  header('location: adques.php?msg='.$msg.'');
 	exit();
 	}
@@ -102,7 +109,7 @@ if(isset($_POST['desc'])){
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer1', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer2', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer3', '0')")or die(mysql_error());
-		$msg = 'Thanks, your question has been added';
+		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
 	  header('location: adques.php?msg='.$msg.'');
 	exit();
 		}
