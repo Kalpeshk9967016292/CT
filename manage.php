@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_NOTICE);
 session_start();
-include('connect.php');
 if($_SESSION['username'])
 {
 $msg = "";
@@ -14,37 +13,12 @@ if(isset($_GET['emsg'])){
 	$emsg = $_GET['emsg'];
 }
 
-
-$id ="";
-if(isset($_GET['id'])){
-	$id = $_GET['id'];
-}
-	$sql1 = mysql_query("Select * from stud_info where stud_id=$id");
-	$result = mysql_num_rows($sql1);
-	while ($row1 = mysql_fetch_array($sql1)) {
-		$name = $row1['name'];
-		$username = $row1['username'];
-		$examtime = $row1['exam_time'];
-		$examdate = $row1['exam_date'];
-		$course = $row1['course'];
-		$examduration = $row1['exam_duration'];
-}
-
-
+include('connect.php');
 
 $sql = mysql_query("Select * from stud_info")or die(mysql_error());
-$res = mysql_num_rows($sql);
+$res = mysql_num_rows($sql)
 
-function getpassword($stud_id){
-	$sql3 = mysql_query("SELECT * FROM student_log where sid=$stud_id");
-	$result = mysql_num_rows($sql3);
-	if($result!=0){
-			while($row3=mysql_fetch_array($sql3)){
-				$password = $row3['spassword'];
-				return $password;
-			}
-	}
-}
+
 
 ?>
 <html>
@@ -59,13 +33,6 @@ function getpassword($stud_id){
 <link rel="stylesheet" type="text/css" href="CSS/adq.css">
 <title>Admin Panel</title>
 <link rel="icon" type="image/gif" href="IMG/CTL.png">
-
-<script>
-function goBack(url) {
-    window.location = url;
-}
-</script>
-
 </head>
 
 
@@ -82,7 +49,7 @@ function goBack(url) {
 
 <div class="container-fluid">
 	<div class="row wbar well">
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome ".$_SESSION['username']."!" ?></h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Welcome</h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Add Question</h4></div>
 		<a href="logout.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
 	</div>
@@ -128,17 +95,17 @@ function goBack(url) {
 					<legend>Personal Details</legend>
 						<div class="col-lg-4 col-md-4">
 							<label for="name">Name</label>
-							<input type="text" required="" id="name" class="form-control" name="txtname" value="<?php if($id==""){ echo ""; }else{ echo $name; } ?>">
+							<input type="text" required="" id="name" class="form-control" name="txtname">
 						</div>
 
 						<div class="col-lg-4 col-md-4">
 							<label for="uname">Username (Auto-generated)</label>
-							<input type="text" required="" id="uname" class="form-control"  name="txtuname" value="<?php if($id==""){ echo ""; }else{ echo $username; } ?>" readonly>
+							<input type="text" required="" id="uname" class="form-control"  name="txtuname" readonly>
 						</div>
 
 						<div class="col-lg-4 col-md-4">
 							<label for="pass">Password</label>
-							<input type="<?php if($id==""){ echo "password"; }else{ echo "text"; } ?>" required="" id="pass" class="form-control" name="txtpass" value="<?php if($id==""){ echo ""; }else{ echo getpassword($_GET['id']); } ?>"><br>
+							<input type="password" required="" id="pass" class="form-control" name="txtpass"><br>
 						</div>
 						
 				</div>
@@ -147,36 +114,35 @@ function goBack(url) {
 					<legend>Exam Details</legend>
 						<div class="col-lg-3 col-md-4">
 							<label for="et">Exam Time</label>
-							<input type="time" required="" id="et" class="form-control" name="examtime" value="<?php if($id==""){ echo ""; }else{ echo $examtime; } ?>">
+							<input type="time" required="" id="et" class="form-control" name="examtime">
 						</div>
 
 						<div class="col-lg-3">
 							<label for="et">Exam Date</label>
-							<input type="date" required="" id="et" class="form-control" name="examdate" value="<?php if($id==""){ echo ""; }else{ echo $examdate; } ?>">
+							<input type="date" required="" id="et" class="form-control" name="examdate">
 						</div>
 						
 						<div class="col-lg-3 col-md-4">
 							<label for="course">Course</label>
 							<select required="" id="course" onchange="genu();" class="form-control" name="course">
 								<option>-Select-</option>
-								<?php if($id==""){ echo ""; }else{ echo "<option selected>".$course."</option>"; } ?>
-								<option value="Tally">Tally</option>
-								<option value="MS-Office">MS-Office</option>
-								<option value="D.T.P">D.T.P</option>
+								<option>Tally</option>
+								<option>MS-Office</option>
+								<option>D.T.P</option>
 							</select>
 						</div>
 
 						<div class="col-lg-3">
-							<label for="et">Exam Duration : </label><b><input type="text" value="<?php if($id==""){ echo 30; }else{ echo $examduration; } ?>" onchange="updaterangeInput(this.value);" id="textInput" style="width:10%; border-style:none;" value="">Minutes</b>
-							<input type="range" id="rangeInput" min="30" max="60" value="<?php if($id==""){ echo 30; }else{ echo $examduration; } ?>" onchange="updateTextInput(this.value);" name="ranexamd"><br>                                                       
+							<label for="et">Exam Duration : </label><b><input type="text" value="30" onchange="updaterangeInput(this.value);" id="textInput" style="width:10%; border-style:none;" value="">Minutes</b>
+							<input type="range" id="rangeInput" min="30" max="60" value="30" onchange="updateTextInput(this.value);" name="ranexamd"><br>                                                       
     					</div>
 				</div>
 
 				<div class="form-group">
 					<legend>Submit</legend>
 					<div class="row">
-					<div class="col-md-3 col-xs-12 center"><input type="submit" value="<?php if($id==""){ echo "Submit"; }else{ echo "Update"; } ?>" style="width:100%;" class="btn btn-primary" name="submit"></div>
-					<div class="col-md-3 col-xs-12"><input type="reset" onclick="<?php if($id!=""){ echo "goBack('manage.php')"; }?>" value="<?php if($id==""){ echo "Reset"; }else{ echo "Cancel"; } ?>" style="width:100%;" class="btn btn-danger"></div>
+					<div class="col-md-3 col-xs-12 center"><input type="submit" value="Submit" style="width:100%;" class="btn btn-primary"></div>
+					<div class="col-md-3 col-xs-12"><input type="reset" value="Reset" style="width:100%;" class="btn btn-danger"></div>
 					</div>
 				</div>
 			</div>
@@ -211,17 +177,14 @@ function goBack(url) {
 										echo "<tr div class=".$row['stud_id']."><td>".$row['stud_id']."</td>";
 										echo "<td>".$row['name']."</td>";
 										echo "<td>".$row['username']."</td>";
-										echo "<td>".getpassword($row['stud_id'])."</td>";
+										echo "<td>***********</td>";
 										echo "<td>".$row['exam_time']."</td>";
 										echo "<td>".$row['exam_date']."</td>";
 										echo "<td>".$row['course']."</td>";
 										echo "<td>".$row['exam_duration']."</td>";
-										echo "<td><a href='manage.php?id=".$row['stud_id']."'><span id='delicon' class='glyphicon glyphicon-edit center-block'></a></span></td>";
-										echo "<td><a href='delete.php?id=".$row['stud_id']."'><span onclick='hideRow(".$row['stud_id'].")' class='glyphicon glyphicon-remove center-block'></a></span></td></tr>";
+										echo "<td><span id='delicon' class='glyphicon glyphicon-edit center-block'></span></td>";
+										echo "<td><span onclick='hideRow(".$row['stud_id'].")' class='glyphicon glyphicon-remove center-block'></span></td></tr>";
 									}
-								}
-								else{
-									echo "<tr><td colspan='10' align='center'>No Student registered from your account</td><tr>";
 								}
 							?>
 							
