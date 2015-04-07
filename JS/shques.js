@@ -43,8 +43,5 @@ $("#delicon").click(function(){
         $(".assdiv").slideToggle(500);
     });
 
-function hideRow(row){
-		$(#+row).slideUp(500);
-};
 
 });
