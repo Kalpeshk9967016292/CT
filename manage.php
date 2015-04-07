@@ -20,12 +20,6 @@ if(isset($_GET['id'])){
 	$id = $_GET['id'];
 }
 	$sql1 = mysql_query("Select * from stud_info where stud_id=$id");
-	$sql2= mysql_query("Select * from studend_log where sid=$id");
-	$result = mysql_num_rows($sql2);
-	while ($row2 = mysql_fetch_array($sql2))
-	{
-		$password = $row2['spassword'];
-	}
 	$result = mysql_num_rows($sql1);
 	while ($row1 = mysql_fetch_array($sql1)) {
 		$name = $row1['name'];
@@ -39,9 +33,18 @@ if(isset($_GET['id'])){
 
 
 $sql = mysql_query("Select * from stud_info")or die(mysql_error());
-$res = mysql_num_rows($sql)
+$res = mysql_num_rows($sql);
 
-
+function getpassword($stud_id){
+	$sql3 = mysql_query("SELECT * FROM student_log where sid=$stud_id");
+	$result = mysql_num_rows($sql3);
+	if($result!=0){
+			while($row3=mysql_fetch_array($sql3)){
+				$password = $row3['spassword'];
+				return $password;
+			}
+	}
+}
 
 ?>
 <html>
@@ -56,6 +59,13 @@ $res = mysql_num_rows($sql)
 <link rel="stylesheet" type="text/css" href="CSS/adq.css">
 <title>Admin Panel</title>
 <link rel="icon" type="image/gif" href="IMG/CTL.png">
+
+<script>
+function goBack(url) {
+    window.location = url;
+}
+</script>
+
 </head>
 
 
@@ -72,7 +82,7 @@ $res = mysql_num_rows($sql)
 
 <div class="container-fluid">
 	<div class="row wbar well">
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Welcome</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome ".$_SESSION['username']."!" ?></h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Add Question</h4></div>
 		<a href="logout.php"><div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Logout</h4></div></a>
 	</div>
@@ -128,7 +138,7 @@ $res = mysql_num_rows($sql)
 
 						<div class="col-lg-4 col-md-4">
 							<label for="pass">Password</label>
-							<input type="password" required="" id="pass" class="form-control" name="txtpass" value="<?php if($id==""){ echo ""; }else{ echo $password; } ?>"><br>
+							<input type="<?php if($id==""){ echo "password"; }else{ echo "text"; } ?>" required="" id="pass" class="form-control" name="txtpass" value="<?php if($id==""){ echo ""; }else{ echo getpassword($_GET['id']); } ?>"><br>
 						</div>
 						
 				</div>
@@ -165,8 +175,8 @@ $res = mysql_num_rows($sql)
 				<div class="form-group">
 					<legend>Submit</legend>
 					<div class="row">
-					<div class="col-md-3 col-xs-12 center"><input type="submit" value="<?php if($id==""){ echo "Submit"; }else{ echo "Update"; } ?>" style="width:100%;" class="btn btn-primary"></div>
-					<div class="col-md-3 col-xs-12"><input type="reset" value="Reset" style="width:100%;" class="btn btn-danger"></div>
+					<div class="col-md-3 col-xs-12 center"><input type="submit" value="<?php if($id==""){ echo "Submit"; }else{ echo "Update"; } ?>" style="width:100%;" class="btn btn-primary" name="submit"></div>
+					<div class="col-md-3 col-xs-12"><input type="reset" onclick="<?php if($id!=""){ echo "goBack('manage.php')"; }?>" value="<?php if($id==""){ echo "Reset"; }else{ echo "Cancel"; } ?>" style="width:100%;" class="btn btn-danger"></div>
 					</div>
 				</div>
 			</div>
@@ -201,14 +211,17 @@ $res = mysql_num_rows($sql)
 										echo "<tr div class=".$row['stud_id']."><td>".$row['stud_id']."</td>";
 										echo "<td>".$row['name']."</td>";
 										echo "<td>".$row['username']."</td>";
-										echo "<td>***********</td>";
+										echo "<td>".getpassword($row['stud_id'])."</td>";
 										echo "<td>".$row['exam_time']."</td>";
 										echo "<td>".$row['exam_date']."</td>";
 										echo "<td>".$row['course']."</td>";
 										echo "<td>".$row['exam_duration']."</td>";
 										echo "<td><a href='manage.php?id=".$row['stud_id']."'><span id='delicon' class='glyphicon glyphicon-edit center-block'></a></span></td>";
-										echo "<td><span onclick='hideRow(".$row['stud_id'].")' class='glyphicon glyphicon-remove center-block'></span></td></tr>";
+										echo "<td><a href='delete.php?id=".$row['stud_id']."'><span onclick='hideRow(".$row['stud_id'].")' class='glyphicon glyphicon-remove center-block'></a></span></td></tr>";
 									}
+								}
+								else{
+									echo "<tr><td colspan='10' align='center'>No Student registered from your account</td><tr>";
 								}
 							?>
 							
