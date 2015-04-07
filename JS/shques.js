@@ -43,5 +43,9 @@ $("#delicon").click(function(){
         $(".assdiv").slideToggle(500);
     });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 
 });
