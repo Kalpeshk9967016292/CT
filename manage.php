@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_NOTICE);
 session_start();
+include('connect.php');
 if($_SESSION['username'])
 {
 $msg = "";
@@ -13,7 +14,29 @@ if(isset($_GET['emsg'])){
 	$emsg = $_GET['emsg'];
 }
 
-include('connect.php');
+
+$id ="";
+if(isset($_GET['id'])){
+	$id = $_GET['id'];
+}
+	$sql1 = mysql_query("Select * from stud_info where stud_id=$id");
+	$sql2= mysql_query("Select * from studend_log where sid=$id");
+	$result = mysql_num_rows($sql2);
+	while ($row2 = mysql_fetch_array($sql2))
+	{
+		$password = $row2['spassword'];
+	}
+	$result = mysql_num_rows($sql1);
+	while ($row1 = mysql_fetch_array($sql1)) {
+		$name = $row1['name'];
+		$username = $row1['username'];
+		$examtime = $row1['exam_time'];
+		$examdate = $row1['exam_date'];
+		$course = $row1['course'];
+		$examduration = $row1['exam_duration'];
+}
+
+
 
 $sql = mysql_query("Select * from stud_info")or die(mysql_error());
 $res = mysql_num_rows($sql)
@@ -95,17 +118,17 @@ $res = mysql_num_rows($sql)
 					<legend>Personal Details</legend>
 						<div class="col-lg-4 col-md-4">
 							<label for="name">Name</label>
-							<input type="text" required="" id="name" class="form-control" name="txtname">
+							<input type="text" required="" id="name" class="form-control" name="txtname" value="<?php if($id==""){ echo ""; }else{ echo $name; } ?>">
 						</div>
 
 						<div class="col-lg-4 col-md-4">
 							<label for="uname">Username (Auto-generated)</label>
-							<input type="text" required="" id="uname" class="form-control"  name="txtuname" readonly>
+							<input type="text" required="" id="uname" class="form-control"  name="txtuname" value="<?php if($id==""){ echo ""; }else{ echo $username; } ?>" readonly>
 						</div>
 
 						<div class="col-lg-4 col-md-4">
 							<label for="pass">Password</label>
-							<input type="password" required="" id="pass" class="form-control" name="txtpass"><br>
+							<input type="password" required="" id="pass" class="form-control" name="txtpass" value="<?php if($id==""){ echo ""; }else{ echo $password; } ?>"><br>
 						</div>
 						
 				</div>
@@ -114,34 +137,35 @@ $res = mysql_num_rows($sql)
 					<legend>Exam Details</legend>
 						<div class="col-lg-3 col-md-4">
 							<label for="et">Exam Time</label>
-							<input type="time" required="" id="et" class="form-control" name="examtime">
+							<input type="time" required="" id="et" class="form-control" name="examtime" value="<?php if($id==""){ echo ""; }else{ echo $examtime; } ?>">
 						</div>
 
 						<div class="col-lg-3">
 							<label for="et">Exam Date</label>
-							<input type="date" required="" id="et" class="form-control" name="examdate">
+							<input type="date" required="" id="et" class="form-control" name="examdate" value="<?php if($id==""){ echo ""; }else{ echo $examdate; } ?>">
 						</div>
 						
 						<div class="col-lg-3 col-md-4">
 							<label for="course">Course</label>
 							<select required="" id="course" onchange="genu();" class="form-control" name="course">
 								<option>-Select-</option>
-								<option>Tally</option>
-								<option>MS-Office</option>
-								<option>D.T.P</option>
+								<?php if($id==""){ echo ""; }else{ echo "<option selected>".$course."</option>"; } ?>
+								<option value="Tally">Tally</option>
+								<option value="MS-Office">MS-Office</option>
+								<option value="D.T.P">D.T.P</option>
 							</select>
 						</div>
 
 						<div class="col-lg-3">
-							<label for="et">Exam Duration : </label><b><input type="text" value="30" onchange="updaterangeInput(this.value);" id="textInput" style="width:10%; border-style:none;" value="">Minutes</b>
-							<input type="range" id="rangeInput" min="30" max="60" value="30" onchange="updateTextInput(this.value);" name="ranexamd"><br>                                                       
+							<label for="et">Exam Duration : </label><b><input type="text" value="<?php if($id==""){ echo 30; }else{ echo $examduration; } ?>" onchange="updaterangeInput(this.value);" id="textInput" style="width:10%; border-style:none;" value="">Minutes</b>
+							<input type="range" id="rangeInput" min="30" max="60" value="<?php if($id==""){ echo 30; }else{ echo $examduration; } ?>" onchange="updateTextInput(this.value);" name="ranexamd"><br>                                                       
     					</div>
 				</div>
 
 				<div class="form-group">
 					<legend>Submit</legend>
 					<div class="row">
-					<div class="col-md-3 col-xs-12 center"><input type="submit" value="Submit" style="width:100%;" class="btn btn-primary"></div>
+					<div class="col-md-3 col-xs-12 center"><input type="submit" value="<?php if($id==""){ echo "Submit"; }else{ echo "Update"; } ?>" style="width:100%;" class="btn btn-primary"></div>
 					<div class="col-md-3 col-xs-12"><input type="reset" value="Reset" style="width:100%;" class="btn btn-danger"></div>
 					</div>
 				</div>
@@ -182,7 +206,7 @@ $res = mysql_num_rows($sql)
 										echo "<td>".$row['exam_date']."</td>";
 										echo "<td>".$row['course']."</td>";
 										echo "<td>".$row['exam_duration']."</td>";
-										echo "<td><span id='delicon' class='glyphicon glyphicon-edit center-block'></span></td>";
+										echo "<td><a href='manage.php?id=".$row['stud_id']."'><span id='delicon' class='glyphicon glyphicon-edit center-block'></a></span></td>";
 										echo "<td><span onclick='hideRow(".$row['stud_id'].")' class='glyphicon glyphicon-remove center-block'></span></td></tr>";
 									}
 								}
