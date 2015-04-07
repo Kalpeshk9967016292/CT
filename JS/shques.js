@@ -7,7 +7,7 @@ $(".bfq").hide();
 
 $(".alert").fadeOut(3000);
 
-$(".assdiv").hide();
+//$(".assdiv").hide();
 $(".deldiv").hide();
 
 $("#mcqbtn").click(function(){
