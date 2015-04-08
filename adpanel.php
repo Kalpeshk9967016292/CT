@@ -53,7 +53,7 @@ if($_SESSION['username'])
 		</div>
 
 		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="#"><img src="IMG/CP.png" width="150px" class="img-responsive center-block"></a><br>Check answers
+		<a href="chkpaper.php"><img src="IMG/CP.png" width="150px" class="img-responsive center-block"></a><br>Check answers
 		</div>
 
 		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">

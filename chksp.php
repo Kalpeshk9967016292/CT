@@ -36,29 +36,19 @@ if($_SESSION['username'])
 </div>
 
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12 col-xs-12" style="text-align:center;"><h1>Select a subject to check.</h1></div>
+		<div class="col-md-12" style="text-align:center;"><h4>Completed papers</h4></div>
 	</div>
 </div>
 
-<div class="container top-buffer2">
+
+
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-4 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="manage.php"><img src="IMG/MSO.png" width="150px" class="img-responsive center-block"></a><br>MS- Office
-		</div>
 		
-		<div class="col-md-4 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="adques.php"><img src="IMG/TAL.png" width="150px" class="img-responsive center-block"></a><br>Tally
-		</div>
-
-		<div class="col-md-4 col-xs-12 top-buffer" style="text-align:center;">
-		<a href="#"><img src="IMG/DTP.png" width="150px" class="img-responsive center-block"></a><br>D.T.P
-		</div>
-
 	</div>
 </div>
-
 
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
