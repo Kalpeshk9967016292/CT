@@ -8,6 +8,7 @@ if($_SESSION['username'])
 	$user = ucfirst(strtolower($user));
 	$question = $_POST['desc'];
 	$type = $_POST['type'];
+	$course
 		
 	if($_POST['type'] == 'bq'){
 		if((!$_POST['desc'])){
@@ -16,7 +17,7 @@ if($_SESSION['username'])
 		exit();
 		}
 		else{
-			$sql = mysql_query("INSERT INTO questions (user,question, type) VALUES ('$user','$question', '$type')")or die(mysql_error());
+			$sql = mysql_query("INSERT INTO questions (user,question, type) VALUES ('$user','$question','$type')")or die(mysql_error());
 			$lastId = mysql_insert_id();
 		mysql_query("UPDATE questions SET question_id='$lastId' WHERE id='$lastId' LIMIT 1")or die(mysql_error());
 			$msg = '<div class="alert alert-success">Question added sucessfully!</div>';

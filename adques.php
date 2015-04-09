@@ -11,6 +11,11 @@ $emsg = "";
 if(isset($_GET['emsg'])){
 	$emsg = $_GET['emsg'];
 }
+
+$course = "";
+if(isset($_GET['course'])){
+	$course = $_GET['course'];
+}
 ?>
 <html>
 <head>
@@ -19,7 +24,7 @@ if(isset($_GET['emsg'])){
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="js/shques.js"></script>
+<script src="js/shques.js" ></script>
 <link rel="stylesheet" type="text/css" href="CSS/adq.css">
 <title>Admin Panel</title>
 <link rel="icon" type="image/gif" href="IMG/CTL.png">
@@ -75,7 +80,7 @@ if(isset($_GET['emsg'])){
 		<!--1st col ms-xs-sm end -->
 		
 		<div class="col-lg-10 well">
-			<div style="text-align:center;"><b>Set Questions</b></div><hr>						
+			<div style="text-align:center;"><b>Set Questions for <?php echo $course ?></b></div><hr>						
 			<?php echo $msg ?>
 			<?php echo $emsg ?>
 			
@@ -112,9 +117,10 @@ if(isset($_GET['emsg'])){
 							<input type="text" required="" id="mcq4" class="form-control" name="answer4">
 							<label> <input type="radio" name="iscorrect" value="answer4"> Correct Answer </label>
 						</div>
-
+							
 						<div class="col-md-4">
 							<input type="hidden" value="mc" name="type">
+							<input type="hidden" name="course" value="<?php echo $course ?>">
 							<br><br><button style="width:50%;" class="btn btn-primary" type="sumbit">Submit</button>
 						</div>
 
@@ -146,9 +152,9 @@ if(isset($_GET['emsg'])){
 							</select>
 						</div>
 
-
 						<div class="col-md-4">
 							<input type="hidden" value="tf" name="type">
+							<input type="hidden" name="course" value="<?php echo $course ?>">
 							<br><br><button style="width:50%;" class="btn btn-primary" type="sumbit">Submit</button>
 						</div>
 
@@ -173,6 +179,7 @@ if(isset($_GET['emsg'])){
 						
 						<div class="col-md-4">
 							<input type="hidden" value="bq" name="type">
+							<input type="hidden" name="course" value="<?php echo $course ?>">
 							<br><br><button style="width:50%;" class="btn btn-primary" type="sumbit">Submit</button>
 						</div>
 
