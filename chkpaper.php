@@ -45,15 +45,15 @@ if($_SESSION['username'])
 <div class="container top-buffer2">
 	<div class="row">
 		<div class="col-md-4 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="manage.php"><img src="IMG/MSO.png" width="150px" class="img-responsive center-block"></a><br>MS- Office
+		<a href="chksp.php"><img src="IMG/MSO.png" width="150px" class="img-responsive center-block"></a><br>MS- Office
 		</div>
 		
 		<div class="col-md-4 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="adques.php"><img src="IMG/TAL.png" width="150px" class="img-responsive center-block"></a><br>Tally
+		<a href="chksp.php"><img src="IMG/TAL.png" width="150px" class="img-responsive center-block"></a><br>Tally
 		</div>
 
 		<div class="col-md-4 col-xs-12 top-buffer" style="text-align:center;">
-		<a href="#"><img src="IMG/DTP.png" width="150px" class="img-responsive center-block"></a><br>D.T.P
+		<a href="chksp.php"><img src="IMG/DTP.png" width="150px" class="img-responsive center-block"></a><br>D.T.P
 		</div>
 
 	</div>

@@ -11,6 +11,7 @@ if($_SESSION['username'])
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/adpanel.css">
+<link rel="stylesheet" type="text/css" href="CSS/adq.css">
 <title>Admin Panel</title>
 <link rel="icon" type="image/gif" href="IMG/CTL.png">
 </head>
@@ -37,18 +38,32 @@ if($_SESSION['username'])
 
 
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12" style="text-align:center;"><h4>Completed papers</h4></div>
-	</div>
-</div>
+	<div class="row top-buffer2">
+		<!--1st col large start -->
+		<div class="col-lg-2 hidden-md hidden-sm hidden-xs" style="background-color: cadetblue; height:75%; text-align:center;">
+			<h4>Question type</h4><hr>
+			<div class="tqb btn btn-primary" id="mcqbtn" style="width:100%;">MCQ</div>
+			<div class="tqb btn btn-primary" id="tfbtn" style="width:100%;">True or False</div>
+			<div class="tqb btn btn-primary" id="brfbtn" style="width:100%;">Brief</div>
+			
+			<h4>Navigation</h4><hr>
+			<a href="adpanel.php"><div class="tqb btn btn-primary" id="bkbtn" style="width:100%;">Back</div></a>
+		</div>
+		<!--1st col large end -->
 
-
-
-<div class="container-fluid">
-	<div class="row">
-		
-	</div>
-</div>
+		<!--1st col ms-xs-sm start -->
+		<div class="hidden-lg" style="background-color: cadetblue; text-align:center;">
+			<h4>Question type</h4><hr>
+			<div class="row">
+					<div class="col-md-3 col-sm-6"><div class="tqb btn btn-primary" id="mcqbtn" style="width:100%;">MCQ</div></div>
+					<div class="col-md-3 col-sm-6"><div class="tqb btn btn-primary" style="width:100%;">True or False</div></div>
+					<div class="col-md-3 col-sm-6"><div class="tqb btn btn-primary" style="width:100%;">Brief</div></div>
+					
+					<h4>Navigation</h4><hr>
+					<div class="col-md-12 col-sm-12"><div class="tqb btn btn-primary" style="width:100%;">Back</div></div>
+			</div>
+		</div>
+		<!--1st col ms-xs-sm end -->
 
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
