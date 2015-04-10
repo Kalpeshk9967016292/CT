@@ -3,7 +3,6 @@ session_start();
 if($_SESSION['username'])
 {
 
-$sub = "";
 if(isset($_GET['sub'])){
 	$sub = $_GET['sub'];
 }

@@ -8,8 +8,8 @@ if($_SESSION['username'])
 	$user = ucfirst(strtolower($user));
 	$question = $_POST['desc'];
 	$type = $_POST['type'];
-	$course
-		
+	$course = $_POST['course'];
+
 	if($_POST['type'] == 'bq'){
 		if((!$_POST['desc'])){
 			$emsg = '<div class="alert alert-danger">Sorry, important data missing</div>';
@@ -17,11 +17,11 @@ if($_SESSION['username'])
 		exit();
 		}
 		else{
-			$sql = mysql_query("INSERT INTO questions (user,question, type) VALUES ('$user','$question','$type')")or die(mysql_error());
+			$sql = mysql_query("INSERT INTO questions (user,course,question, type) VALUES ('$user','$course','$question','$type')")or die(mysql_error());
 			$lastId = mysql_insert_id();
 		mysql_query("UPDATE questions SET question_id='$lastId' WHERE id='$lastId' LIMIT 1")or die(mysql_error());
 			$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
-			header('location: adques.php?msg='.$msg.'');
+			header('location: adques.php?msg='.$msg.'&course='.$course.'');
 	exit();
 		}
 	}
@@ -57,7 +57,7 @@ if(isset($_POST['desc'])){
 		exit();
 		}
 	}
-	$sql = mysql_query("INSERT INTO questions (user,question, type) VALUES ('$user','$question', '$type')")or die(mysql_error());
+	$sql = mysql_query("INSERT INTO questions (user,course,question, type) VALUES ('$user','$course','$question', '$type')")or die(mysql_error());
 		$lastId = mysql_insert_id();
 		mysql_query("UPDATE questions SET question_id='$lastId' WHERE id='$lastId' LIMIT 1")or die(mysql_error());
 
@@ -66,14 +66,14 @@ if(isset($_POST['desc'])){
 		$sql2 = mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', 'True', '1')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', 'False', '0')")or die(mysql_error());
 		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
-	  header('location: adques.php?msg='.$msg.'');
+	  header('location: adques.php?msg='.$msg.'&course='.$course.'');
 	exit();
 	}
 	if($isCorrect == "answer2"){
 		$sql2 = mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', 'False', '1')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', 'True', '0')")or die(mysql_error());
 		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
-	  header('location: adques.php?msg='.$msg.'');
+	  header('location: adques.php?msg='.$msg.'&course='.$course.'');
 	exit();
 		}	
 	}
@@ -84,7 +84,7 @@ if(isset($_POST['desc'])){
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer3', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer4', '0')")or die(mysql_error());
 		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
-	  header('location: adques.php?msg='.$msg.'');
+	  header('location: adques.php?msg='.$msg.'&course='.$course.'');
 	exit();
 	}
 	if($isCorrect == "answer2"){
@@ -93,7 +93,7 @@ if(isset($_POST['desc'])){
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer3', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer4', '0')")or die(mysql_error());
 		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
-	  header('location: adques.php?msg='.$msg.'');
+	  header('location: adques.php?msg='.$msg.'&course='.$course.'');
 	exit();
 	}
 	if($isCorrect == "answer3"){
@@ -102,7 +102,7 @@ if(isset($_POST['desc'])){
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer2', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer4', '0')")or die(mysql_error());
 		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
-	  header('location: adques.php?msg='.$msg.'');
+	  header('location: adques.php?msg='.$msg.'&course='.$course.'');
 	exit();
 	}
 	if($isCorrect == "answer4"){
@@ -111,7 +111,7 @@ if(isset($_POST['desc'])){
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer2', '0')")or die(mysql_error());
 		mysql_query("INSERT INTO answers (question_id, answer, correct) VALUES ('$lastId', '$answer3', '0')")or die(mysql_error());
 		$msg = '<div class="alert alert-success">Question added sucessfully!</div>';
-	  header('location: adques.php?msg='.$msg.'');
+	  header('location: adques.php?msg='.$msg.'&course='.$course.'');
 	exit();
 		}
 	}

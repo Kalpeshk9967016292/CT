@@ -12,9 +12,12 @@ if(isset($_GET['emsg'])){
 	$emsg = $_GET['emsg'];
 }
 
-$course = "";
 if(isset($_GET['course'])){
 	$course = $_GET['course'];
+}
+
+if(isset($_POST['course'])){
+	$course = $_POST['course'];
 }
 ?>
 <html>
