@@ -4,6 +4,8 @@ $(document).ready(function()
 $(".mcq").hide();
 $(".tfq").hide();
 $(".bfq").hide();
+$(".cp").hide();
+//$(".ucp").hide();
 
 $(".alert").fadeOut(3000);
 
@@ -43,6 +45,14 @@ $("#delicon").click(function(){
         $(".assdiv").slideToggle(500);
     });
 
+$("#cpbtn").click(function(){
+        $(".ucp").slideUp(500);
+        $(".cp").slideToggle(500);
+    });
 
+$("#ucpbtn").click(function(){
+        $(".cp").slideUp(500);
+        $(".ucp").slideToggle(500);
+    });
 
 });

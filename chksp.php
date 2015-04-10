@@ -65,6 +65,10 @@ if($_SESSION['username'])
 		</div>
 		<!--1st col ms-xs-sm end -->
 
+		<div class="class-col-10">
+			
+		</div>
+
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
