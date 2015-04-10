@@ -55,4 +55,25 @@ $("#ucpbtn").click(function(){
         $(".ucp").slideToggle(500);
     });
 
+//sanswersheet
+$(".mcqq div").each(function(e)
+{
+    if (e!=0)
+        $(this).hide();
+});
+
+$("#next").click(function(){
+    if ($(".mcqq div:visible").next().length!=0)
+        $(".mcqq div:visible").next().slideDown(500).prev().slideUp(200);
+
+    return false;
+});
+
+$("#prev").click(function(){
+    if ($(".mcqq div:visible").prev().length!=0)
+        $(".mcqq div:visible").prev().slideDown(500).next().slideUp(200);
+    
+    return false;
+});
+
 });
