@@ -2,22 +2,16 @@
 session_start();
 if($_SESSION['username'])
 {
-$msg = "";
-if(isset($_GET['msg'])){
-	$msg = $_GET['msg'];
+
+$name="";
+if(isset($_GET['name'])){
+	$name = $_GET['name'];
 }
 
-$emsg = "";
-if(isset($_GET['emsg'])){
-	$emsg = $_GET['emsg'];
-}
-
-if(isset($_GET['course'])){
-	$course = $_GET['course'];
-}
-
-if(isset($_POST['course'])){
-	$course = $_POST['course'];
+$time="";
+if(isset($_GET['time'])){
+	$time=$_GET['time'];
+	$time = $time*60;
 }
 ?>
 <html>
@@ -31,8 +25,28 @@ if(isset($_POST['course'])){
 <link rel="stylesheet" type="text/css" href="CSS/adq.css">
 <title>Admin Panel</title>
 <link rel="icon" type="image/gif" href="IMG/CTL.png">
-</head>
 
+<!--<span id="countdown" class="timer"></span>-->
+<script>
+var seconds = <?php echo $time ?>;
+function secondPassed() {
+    var minutes = Math.round((seconds - 30)/60);
+    var remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;  
+    }
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+    } else {
+        seconds--;
+    }
+}
+ 
+var countdownTimer = setInterval('secondPassed()', 1000);
+</script>
+</head>
 
 <body bgcolor="cadetblue">
 
@@ -47,9 +61,9 @@ if(isset($_POST['course'])){
 
 <div class="container-fluid">
 	<div class="row wbar well">
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome ".$_SESSION['username']."!";?></h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome ".$name."!";?></h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Answer sheet</h4></div>
-		<div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Timer : 00:00:00</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Timer : <span id="countdown" class="timer"></span></h4></div>
 	</div>
 </div>
 
@@ -64,7 +78,7 @@ if(isset($_POST['course'])){
 			<div class="tqb btn btn-primary" id="brfbtn" style="width:100%;">Brief</div>
 			
 			<h4>Examination</h4><hr>
-			<a href="adpanel.php"><div class="tqb btn btn-danger" id="bkbtn" style="width:100%;">End Examination</div></a>
+			<div class="tqb btn btn-danger" onclick="endalert()" id="bkbtn" style="width:100%;">End Examination</div>
 		</div>
 		<!--1st col large end -->
 

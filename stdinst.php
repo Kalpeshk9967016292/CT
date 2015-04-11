@@ -54,7 +54,7 @@ if($result!=0){
 			2. Use Next button for next question.<br><br>
 			3. Use Previous button for previous question.<br><br>
 			4. You can change answers any time during exam.<br><br>
-			5. Complete exam before time is 0:00.
+			5. Complete exam before time is <?php echo $time ?>:00.
 			</h4>
 		</div>
 		<div class="col-md-2"></div>
@@ -65,7 +65,7 @@ if($result!=0){
 	<div class="row top-buffer">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
-			<button style="width:100%; text-align:center;" class="btn btn-primary">Start Exam</button>			
+			<a href="sanswersheet.php?name=<?php echo $name ?>&&time=<?php echo $time ?>"><button style="width:100%; text-align:center;" class="btn btn-primary">Start Exam</button></a>
 		</div>
 		<div class="col-md-2"></div>
 	</div>
