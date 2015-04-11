@@ -1,3 +1,20 @@
+<?php
+error_reporting(E_NOTICE);
+session_start();
+if($_SESSION['username']){
+	$user = $_SESSION['username'];
+include_once('connect.php');
+
+$sql=mysql_query("SELECT * FROM stud_info where username = '$user'");
+$result = mysql_num_rows($sql);
+if($result!=0){
+	while($row = mysql_fetch_array($sql)){
+		$name = $row['name'];
+		$time = $row['exam_duration'];
+	}
+}
+?>
+
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'><meta charset="utf-8">
@@ -23,7 +40,7 @@
 
 <div class="container">
 	<div class="row top-buffer">
-		<div class="col-md-12" style="text-align:center;"><h2>Welcome Kalpesh</h2></div>
+		<div class="col-md-12" style="text-align:center;"><h2>Welcome <?php echo $name ?></h2></div>
 		<div class="col-md-12" style="text-align:center;"><h3>Please read instructions carefully!!</h3></div>
 	</div>
 </div>
@@ -59,3 +76,10 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+}
+else
+{
+header ("location:index.php");
+}
+?>

@@ -26,7 +26,7 @@ if ($numrows!=0)
 if ($username==$dbusername&&$password==$dbpassword)
 {
 	$_SESSION['username']=$username;
-	header("location:sdpanel.php");
+	header("location:stdinst.php");
 }
 else
 {
