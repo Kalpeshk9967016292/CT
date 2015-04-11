@@ -176,8 +176,10 @@ function goBack(url) {
 					<legend>Submit</legend>
 					<div class="row">
 					<input type="hidden" value="<?php if($id==""){ echo ""; }else{ echo $id; } ?>" name="id">
-					<div class="col-md-3 col-xs-12 center"><input type="submit" value="<?php if($id==""){ echo "Submit"; }else{ echo "Update"; } ?>" style="width:100%;" class="btn btn-primary" name="<?php if($id==""){ echo "Submit"; }else{ echo "Update"; } ?>"></div>
-					<div class="col-md-3 col-xs-12"><input type="reset" onclick="<?php if($id!=""){ echo "goBack('manage.php')"; }?>" value="<?php if($id==""){ echo "Reset"; }else{ echo "Cancel"; } ?>" style="width:100%;" class="btn btn-danger"></div>
+					<div class="col-md-4"></div>
+					<div class="col-md-2 col-xs-12 center"><input type="submit" value="<?php if($id==""){ echo "Submit"; }else{ echo "Update"; } ?>" style="width:100%;" class="btn btn-primary" name="<?php if($id==""){ echo "Submit"; }else{ echo "Update"; } ?>"></div>
+					<div class="col-md-2 col-xs-12"><input type="reset" onclick="<?php if($id!=""){ echo "goBack('manage.php')"; }?>" value="<?php if($id==""){ echo "Reset"; }else{ echo "Cancel"; } ?>" style="width:100%;" class="btn btn-danger"></div>
+					<div class="col-md-4"></div>
 					</div>
 				</div>
 			</div>

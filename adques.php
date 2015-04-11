@@ -121,6 +121,8 @@ if(isset($_POST['course'])){
 							<label> <input type="radio" name="iscorrect" value="answer4"> Correct Answer </label>
 						</div>
 							
+						<div class="col-md-2"></div>
+
 						<div class="col-md-4">
 							<input type="hidden" value="mc" name="type">
 							<input type="hidden" name="course" value="<?php echo $course ?>">
@@ -130,6 +132,8 @@ if(isset($_POST['course'])){
 						<div class="col-md-4">
 							<br><br><button style="width:50%;" class="btn btn-danger" type="reset">Reset</button>
 						</div>
+
+						<div class="col-md-2"></div>
 
 					</div>
 				</form>
@@ -155,6 +159,8 @@ if(isset($_POST['course'])){
 							</select>
 						</div>
 
+						<div class="col-md-2"></div>
+
 						<div class="col-md-4">
 							<input type="hidden" value="tf" name="type">
 							<input type="hidden" name="course" value="<?php echo $course ?>">
@@ -164,6 +170,8 @@ if(isset($_POST['course'])){
 						<div class="col-md-4">
 							<br><br><button style="width:50%;" class="btn btn-danger" type="reset">Reset</button>
 						</div>
+
+						<div class="col-md-2"></div>
 
 					</div>
 				</form>
@@ -180,6 +188,8 @@ if(isset($_POST['course'])){
 						<input type="textarea" required="" id="bfq" class="form-control" name="desc"><br>
 						</div>
 						
+						<div class="col-md-2"></div>
+
 						<div class="col-md-4">
 							<input type="hidden" value="bq" name="type">
 							<input type="hidden" name="course" value="<?php echo $course ?>">
@@ -189,6 +199,8 @@ if(isset($_POST['course'])){
 						<div class="col-md-4">
 							<br><br><button style="width:50%;" class="btn btn-danger" type="reset">Reset</button>
 						</div>
+
+						<div class="col-md-2"></div>
 
 					</div>
 				</form>
