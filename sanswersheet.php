@@ -48,7 +48,7 @@ if(isset($_POST['course'])){
 <div class="container-fluid">
 	<div class="row wbar well">
 		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4><?php echo "Welcome ".$_SESSION['username']."!";?></h4></div>
-		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Add Question</h4></div>
+		<div class="col-md-4 col-xs-4" style="text-align:center;"><h4>Answer sheet</h4></div>
 		<div class="col-md-4 col-xs-4" style="text-align:center;color:black;"><h4>Timer : 00:00:00</h4></div>
 	</div>
 </div>
@@ -83,8 +83,9 @@ if(isset($_POST['course'])){
 		<!--1st col ms-xs-sm end -->
 		
 		<div class="col-lg-10 well">
-			<div class="mcqs">
-				<form action="submcq.php" method="post">
+			<!--MCQ Questions-->
+			<div class="mcq">
+				<form action="answers.php" method="post">
 					<div class="form-group ">
 						<legend>Multiple Choice Questions</legend><br>
 						
@@ -128,28 +129,114 @@ if(isset($_POST['course'])){
 
 						</div>
 
-						<div class="buttons">
-						<br><legend></legend><br>	
-							<div class="col-md-3">
-								<button class="btn btn-info" id="next" style="width:100%;">Prev</button>
+					</div>
+				
+			</div>
+			<!--MCQ Questions End-->
+
+			<!--TF Questions-->
+			<div class="tfq">
+				
+					<div class="form-group ">
+						<legend>True or False Questions</legend><br>
+						
+						<div class="tfqq">
+
+						<div class="tfq1">
+							<div class="col-md-12 lead">
+								1. This is a sample TF Question just for test.<br><hr>
 							</div>
-							<div class="col-md-2">
-								
-							</div>
-							<div class="col-md-2">
-								<button class="btn btn-primary" style="width:100%;">Submit</button>
-							</div>
-							<div class="col-md-2">
-								
-							</div>
-							<div class="col-md-3">
-								<button class="btn btn-info" id="prev" style="width:100%;">Next</button>
+							<div class="col-md-6" style="font-size:20px;margin-bottom:30px;">
+								<select required="" id="tfans" class="form-control" name="iscorrect">
+								<option>-Select-</option>
+								<option value="answer1">True</option>
+								<option value="answer2">False</option>
+							</select>
 							</div>
 						</div>
 
+						<div class="tfq1">
+							<div class="col-md-12 lead">
+								2. This is a sample TF Question just for test.<br><hr>
+							</div>
+							<div class="col-md-6" style="font-size:20px;margin-bottom:30px;">
+								<select required="" id="tfans" class="form-control" name="iscorrect">
+								<option>-Select-</option>
+								<option value="answer1">True</option>
+								<option value="answer2">False</option>
+							</select>
+							</div>
+						</div>
+						
+
+						</div>
+
+						
+
 					</div>
-				</form>
+				
 			</div>
+			<!--TF Questions End-->
+
+			<!--BF Questions-->
+			<div class="bfq">
+				
+					<div class="form-group ">
+						<legend>Brief Questions</legend><br>
+						
+						<div class="bfqq">
+
+						<div class="bfq1">
+							<div class="col-md-12 lead">
+								1. This is a sample Brief Question just for test.<br><hr>
+							</div>
+							<div class="col-md-6" style="font-size:20px;margin-bottom:30px;">
+								<textarea class="form-control" rows="5"></textarea>
+							</div>
+						</div>
+
+						<div class="bfq1">
+							<div class="col-md-12 lead">
+								2. This is a sample TF Question just for test.<br><hr>
+							</div>
+							<div class="col-md-6" style="font-size:20px;margin-bottom:30px;">
+								<textarea class="form-control" rows="5"></textarea>
+							</div>
+						</div>
+						
+
+						</div>
+
+						
+
+					</div>
+				
+			</div>
+			<!--BF Questions End-->
+
+			<div class="buttons">
+				<br><legend></legend><br>	
+					<div class="col-md-3">
+						<button class="btn btn-info" id="prev" style="width:100%;">Prev</button>
+					</div>
+					
+					<div class="col-md-1">
+								
+					</div>
+					
+					<div class="col-md-4">
+						<input type="submit" style="width:100%;" class="btn btn-primary">
+					</div>
+							
+					<div class="col-md-1">
+								
+					</div>
+							
+					<div class="col-md-3">
+						<button class="btn btn-info" id="next" style="width:100%;">Next</button>
+					</div>
+			</div>
+			</form>
 		</div>
 	</div>
 </div>

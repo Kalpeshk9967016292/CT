@@ -5,6 +5,7 @@ $(".mcq").hide();
 $(".tfq").hide();
 $(".bfq").hide();
 $(".cp").hide();
+$(".buttons").hide();
 //$(".ucp").hide();
 
 $(".alert").fadeOut(3000);
@@ -16,18 +17,21 @@ $("#mcqbtn").click(function(){
         $(".tfq").slideUp(500);
         $(".bfq").slideUp(500);
         $(".mcq").slideToggle(500);
+        $(".buttons").show();
     });
 
 $("#tfbtn").click(function(){
         $(".bfq").slideUp(500);
         $(".mcq").slideUp(500);
         $(".tfq").slideToggle(500);
+        $(".buttons").show();
     });
 
 $("#brfbtn").click(function(){
         $(".mcq").slideUp(500);
         $(".tfq").slideUp(500);
         $(".bfq").slideToggle(500);
+        $(".buttons").show();
     });
 
 $("#assbtn").click(function(){
@@ -55,25 +59,70 @@ $("#ucpbtn").click(function(){
         $(".ucp").slideToggle(500);
     });
 
-//sanswersheet
-$(".mcqq div").each(function(e)
+//sanswersheet MCQ
+$(".mcq1").each(function(e)
 {
     if (e!=0)
         $(this).hide();
 });
 
 $("#next").click(function(){
-    if ($(".mcqq div:visible").next().length!=0)
-        $(".mcqq div:visible").next().slideDown(500).prev().slideUp(200);
+    if ($(".mcq1:visible").next().length!=0)
+        $(".mcq1:visible").next().slideDown(500).prev().slideUp(200);
 
     return false;
 });
 
 $("#prev").click(function(){
-    if ($(".mcqq div:visible").prev().length!=0)
-        $(".mcqq div:visible").prev().slideDown(500).next().slideUp(200);
+    if ($(".mcq1:visible").prev().length!=0)
+        $(".mcq1:visible").prev().slideDown(500).next().slideUp(200);
     
     return false;
 });
+//MCQ End
+
+//sanswersheet TF
+$(".tfq1").each(function(e)
+{
+    if (e!=0)
+        $(this).hide();
+});
+
+$("#next").click(function(){
+    if ($(".tfq1:visible").next().length!=0)
+        $(".tfq1:visible").next().slideDown(500).prev().slideUp(200);
+
+    return false;
+});
+
+$("#prev").click(function(){
+    if ($(".tfq1:visible").prev().length!=0)
+        $(".tfq1:visible").prev().slideDown(500).next().slideUp(200);
+    
+    return false;
+});
+//TF End
+
+//sanswersheet BF
+$(".bfq1").each(function(e)
+{
+    if (e!=0)
+        $(this).hide();
+});
+
+$("#next").click(function(){
+    if ($(".bfq1:visible").next().length!=0)
+        $(".bfq1:visible").next().slideDown(500).prev().slideUp(200);
+
+    return false;
+});
+
+$("#prev").click(function(){
+    if ($(".bfq1:visible").prev().length!=0)
+        $(".bfq1:visible").prev().slideDown(500).next().slideUp(200);
+    
+    return false;
+});
+//TF End
 
 });
