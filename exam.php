@@ -3,6 +3,16 @@ session_start();
 $user = $_SESSION['username'];
 if($_SESSION['username'])
 {
+	$name="";
+if(isset($_GET['name'])){
+	$name = $_GET['name'];
+}
+
+$time="";
+if(isset($_GET['time'])){
+	$time=$_GET['time'];
+	$time = $time*60;
+}
 echo "<b>Welcome,</b>".$_SESSION['username']."!";
 include('connect.php');
 $result=mysql_query("SELECT * FROM `questions` where type='mc' order by rand() limit 5");
@@ -22,7 +32,7 @@ while($row=mysql_fetch_array($result1))
 	mysql_query("INSERT INTO temp_table(username,question_id,type)VALUES('$user','$qid1','$type1')");
 //echo $qid1."<br>";
 }
-header ("location:startexam.php");
+header ("location:sanswersheet.php?name=$name&&time=$time");
 }
 else
 {

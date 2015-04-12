@@ -11,7 +11,7 @@ if(isset($_GET['name'])){
 $time="";
 if(isset($_GET['time'])){
 	$time=$_GET['time'];
-	$time = $time*60;
+
 }
 ?>
 <html>

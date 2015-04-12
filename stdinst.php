@@ -65,7 +65,7 @@ if($result!=0){
 	<div class="row top-buffer">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
-			<a href="sanswersheet.php?name=<?php echo $name ?>&&time=<?php echo $time ?>"><button style="width:100%; text-align:center;" class="btn btn-primary">Start Exam</button></a>
+			<a href="exam.php?name=<?php echo $name ?>&&time=<?php echo $time ?>"><button style="width:100%; text-align:center;" class="btn btn-primary">Start Exam</button></a>
 		</div>
 		<div class="col-md-2"></div>
 	</div>
