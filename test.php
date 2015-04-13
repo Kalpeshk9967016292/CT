@@ -1,7 +1,6 @@
 <?php
 	
 	include('connect.php');
-	
 	$sql = mysql_query("SELECT * FROM temp_table");
 	$result = mysql_num_rows($sql);
 	if($result!=0){
@@ -15,6 +14,16 @@
 			echo $row1['question']."<br>";
 		}
 
+	$sql2 = mysql_query("SELECT * FROM answers where question_id = '$id'");
+	$result2 = mysql_num_rows($sql2);
+	if($result2!=0){
+		while($row2 = mysql_fetch_array($sql2)){
+			echo "<input type='radio' name='answer'>".$row2['answer']."<br>";
+		}
 	}
-	}	
+			
+	}
+	}
+
+
 ?>
