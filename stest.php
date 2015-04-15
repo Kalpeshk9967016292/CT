@@ -1,3 +1,35 @@
+<?php
+	
+include('connect.php');
+function fetch($type){
+	if($type == mc){ $class = mcq1;}else{ $class = tqf1;}
+	$sql = mysql_query("SELECT * FROM temp_table where type='$type'");
+	$result = mysql_num_rows($sql);
+	if($result!=0){
+		while($row = mysql_fetch_array($sql)){
+			$id= $row['question_id'];
+		
+			$sql1 = mysql_query("SELECT * FROM questions where question_id = '$id'");
+			$result1 = mysql_num_rows($sql1);
+			if($result1!=0){
+				$row1 = mysql_fetch_array($sql1);
+				echo "<div class='$class'>";
+				echo "<div class='col-md-12 lead'>".$row1['question_id'].":".$row1['question']."</div>";
+				echo "<br><hr>";
+				
+				$sql2 = mysql_query("SELECT * FROM answers where question_id = '$id' order by rand()");
+				$result2 = mysql_num_rows($sql2);
+				if($result2!=0){
+					while($row2 = mysql_fetch_array($sql2)){			
+					echo "<div class='col-md-6' style='font-size:20px;margin-bottom:30px;'><label> <input type='radio' name='option'>".$row2['answer']."</label></div>";
+					}
+				echo "</div>";
+				}
+			}
+		}
+	}
+}		
+?>
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'><meta charset="utf-8">
@@ -67,42 +99,10 @@
 						<legend>Multiple Choice Questions</legend><br>
 						
 						<div class="mcqq">
+						<?php
+						fetch(mc);
+						?>	
 
-						
-							
-								<?php
-	
-	include('connect.php');
-	
-	$sql = mysql_query("SELECT * FROM temp_table");
-	$result = mysql_num_rows($sql);
-	if($result!=0){
-		while($row = mysql_fetch_array($sql)){
-			$id= $row['question_id'];
-		
-	$sql1 = mysql_query("SELECT * FROM questions where question_id = '$id'");
-	$result1 = mysql_num_rows($sql1);
-	if($result1!=0){
-		$row1 = mysql_fetch_array($sql1);
-			echo "<div class='mcq1'>";
-			echo "<div class='col-md-12 lead'>".$row1['question_id'].":".$row1['question']."</div>";
-			$id1 = $row1['question'];
-			echo "<br><hr>";
-			
-			
-		
-	$sql2 = mysql_query("SELECT * FROM answers where question_id = '$id1'");
-	$result2 = mysql_num_rows($sql2);
-	if($result2!=0){
-		while($row2 = mysql_fetch_array($sql2)){			
-			echo "<div class='col-md-6' style='font-size:20px;margin-bottom:30px;'><label> <input type='radio' name='option'>".$row2['answer']."</label></div>";
-			echo "</div>";
-		}
-	}
-}
-	}
-	}	
-?>
 		</div>
 </div>
 				
@@ -117,32 +117,9 @@
 						
 						<div class="tfqq">
 
-						<div class="tfq1">
-							<div class="col-md-12 lead">
-								1. This is a sample TF Question just for test.<br><hr>
-							</div>
-							<div class="col-md-6" style="font-size:20px;margin-bottom:30px;">
-								<select required="" id="tfans" class="form-control" name="iscorrect">
-								<option>-Select-</option>
-								<option value="answer1">True</option>
-								<option value="answer2">False</option>
-							</select>
-							</div>
-						</div>
-
-						<div class="tfq1">
-							<div class="col-md-12 lead">
-								2. This is a sample TF Question just for test.<br><hr>
-							</div>
-							<div class="col-md-6" style="font-size:20px;margin-bottom:30px;">
-								<select required="" id="tfans" class="form-control" name="iscorrect">
-								<option>-Select-</option>
-								<option value="answer1">True</option>
-								<option value="answer2">False</option>
-							</select>
-							</div>
-						</div>
-						
+						<?php
+						fetch(tf);
+						?>
 
 						</div>
 
