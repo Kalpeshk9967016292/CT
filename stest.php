@@ -84,10 +84,10 @@
 	$result1 = mysql_num_rows($sql1);
 	if($result1!=0){
 		$row1 = mysql_fetch_array($sql1);
-			echo "<div class='mcq1'>";
-			echo "<div class='col-md-12 lead'>".$row1['question_id'].":".$row1['question']."</div>";
-			$id1 = $row1['question'];
-			echo "<br><hr>";
+			echo '<div class="mcq1">';
+			echo '<div class="col-md-12 lead">'.$row1["question_id"].':'.$row1["question"].'</div>';
+			$id1 = $row1["question"];
+			echo '<br><hr>';
 			
 			
 		

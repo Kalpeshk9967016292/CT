@@ -12,6 +12,11 @@ $time="";
 if(isset($_GET['time'])){
 	$time=$_GET['time'];
 
+function getMcq()
+{
+	
+}
+
 }
 ?>
 <html>
