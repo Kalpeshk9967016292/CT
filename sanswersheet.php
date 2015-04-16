@@ -53,13 +53,6 @@ function fetch($user,$type){
 	}
 }
 
-<<<<<<< HEAD
-function getMcq()
-{
-	
-}
-
-=======
 function fetchbq($user){
 	$sql3 = mysql_query("SELECT * FROM temp_table where username = '$user' and type='bq'");
 	$result3 = mysql_num_rows($sql3);
@@ -79,7 +72,6 @@ function fetchbq($user){
 			}
 		}
 	}
->>>>>>> origin/master
 }
 ?>
 <html>
