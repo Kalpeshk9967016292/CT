@@ -32,6 +32,13 @@ while($row=mysql_fetch_array($result1))
 	mysql_query("INSERT INTO temp_table(username,question_id,type)VALUES('$user','$qid1','$type1')");
 //echo $qid1."<br>";
 }
+$result2 = mysql_query("SELECT * FROM `questions` where type='bq' order by rand() limit 1");
+while($row = mysql_fetch_array($result2))
+{
+	$qid2 = $row['question_id'];
+	$type2 = $row['type'];
+	mysql_query("INSERT INTO temp_table(username,question_id,type)VALUES('$user','$qid2','$type2')");
+}
 header ("location:sanswersheet.php?name=$name&&time=$time");
 }
 else
