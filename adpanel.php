@@ -49,7 +49,7 @@ if($_SESSION['username'])
 		</div>
 		
 		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
-		<a href="chkpaper.php?sub=1"><img src="IMG/NE.png" width="150px" class="img-responsive center-block"></a><br>New Exam
+		<a href="pptn.php?sub=1"><img src="IMG/NE.png" width="150px" class="img-responsive center-block"></a><br>New Exam
 		</div>
 
 		<div class="col-md-3 col-xs-6 top-buffer" style="text-align:center;">
